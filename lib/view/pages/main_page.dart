@@ -1,7 +1,6 @@
 import 'package:envairo/view/pages/advertisement_grid.dart';
 import 'package:envairo/view/pages/new_advertisement.dart';
 import 'package:envairo/view/pages/search_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
@@ -69,9 +68,10 @@ class _MainPageState extends State<MainPage> {
         items: List<BottomNavigationBarItem>.generate(
             _widgetOptions.length,
             (index) => BottomNavigationBarItem(
-                icon: _selectedIndex == index?
-                _widgetOptions[index].selectedIcon : _widgetOptions[index].icon,
-                label: _widgetOptions[index].label,
+              backgroundColor: Theme.of(context).primaryColor,
+              activeIcon: _widgetOptions[index].selectedIcon,
+              icon: _widgetOptions[index].icon,
+              label: _widgetOptions[index].label,
             )
         ),
         currentIndex: _selectedIndex,

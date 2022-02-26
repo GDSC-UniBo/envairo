@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Envairo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primaryColor: Colors.greenAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
       ),
