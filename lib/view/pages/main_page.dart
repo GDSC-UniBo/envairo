@@ -1,7 +1,11 @@
 import 'package:envairo/view/pages/advertisement_grid.dart';
+import 'package:envairo/view/pages/my_profile.dart';
 import 'package:envairo/view/pages/new_advertisement.dart';
 import 'package:envairo/view/pages/search_page.dart';
 import 'package:flutter/material.dart';
+
+import 'chat_list.dart';
+import 'messages.dart';
 
 class MainPage extends StatefulWidget{
   static const String route = '/';
@@ -39,14 +43,14 @@ class _MainPageState extends State<MainPage> {
       icon: const Icon(Icons.mail_outline),
       selectedIcon: const Icon(Icons.mail),
       label: "Messages",
-      page: const NewAdvertisement(),
+      page: const Messages(),
     ),
 
     MenuOption(
       icon: const Icon(Icons.person_outline),
       selectedIcon: const Icon(Icons.person),
       label: "Profile",
-      page: const NewAdvertisement(),
+      page: const MyProfile(),
     ),
   ];
 
