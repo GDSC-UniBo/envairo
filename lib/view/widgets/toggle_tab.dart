@@ -59,6 +59,8 @@ class _ToggleTabState extends State<ToggleTab> with SingleTickerProviderStateMix
           ),
         ),
 
+        SizedBox(height: 25.h,),
+
         Expanded(
           child: TabBarView(
               controller: _tabController,

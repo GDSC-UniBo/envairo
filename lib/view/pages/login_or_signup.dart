@@ -2,6 +2,7 @@ import 'package:envairo/view/pages/login.dart';
 import 'package:envairo/view/pages/sign_up.dart';
 import 'package:envairo/view/widgets/round_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../router.dart';
 
@@ -38,11 +39,16 @@ class LoginOrSignup extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          Image.network(
-              "https://a1auto.sfo2.cdn.digitaloceanspaces.com/assets/logo-placeholder.png"),
+
+          Image.network("https://a1auto.sfo2.cdn.digitaloceanspaces.com/assets/logo-placeholder.png",
+            height: 200.h,
+            width: 200.h,
+          ),
+
           const SizedBox(
             height: 100,
           ),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: SizedBox(
@@ -91,17 +97,7 @@ class LoginOrSignup extends StatelessWidget {
     );
   }
 
-  void onTapSignUp(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: SignUp.route)),
-    );
-  }
+  void onTapSignUp(context) => Navigator.pushNamed(context, SignUp.route);
 
-  void onTapLogIn(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: LogIn.route)),
-    );
-  }
+  void onTapLogIn(context) => Navigator.pushNamed(context, LogIn.route);
 }
