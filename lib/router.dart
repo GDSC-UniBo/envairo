@@ -1,3 +1,4 @@
+import 'package:envairo/view/pages/chat_view.dart';
 import 'package:envairo/view/pages/login.dart';
 import 'package:envairo/view/pages/login_or_signup.dart';
 import 'package:envairo/view/pages/main_page.dart';
@@ -11,7 +12,8 @@ class RouteGenerator {
     MainPage.route: (context, _) => const MainPage(),
     LogIn.route: (context, _) => const LogIn(),
     SignUp.route: (context, _) => const SignUp(),
-    LoginOrSignup.route: (context, _) => const LoginOrSignup()
+    LoginOrSignup.route: (context, _) => const LoginOrSignup(),
+    ChatView.route: (context, _) => const ChatView(),
   };
 
   Route<dynamic> generateRoute(RouteSettings settings) {
