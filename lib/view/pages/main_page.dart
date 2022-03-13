@@ -1,10 +1,9 @@
-import 'package:envairo/view/pages/advertisement_grid.dart';
 import 'package:envairo/view/pages/my_profile.dart';
 import 'package:envairo/view/pages/new_advertisement.dart';
 import 'package:envairo/view/pages/search_page.dart';
 import 'package:flutter/material.dart';
-
-import 'chat_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'home.dart';
 import 'messages.dart';
 
 class MainPage extends StatefulWidget{
@@ -22,7 +21,7 @@ class _MainPageState extends State<MainPage> {
         icon: const Icon(Icons.home_outlined),
         selectedIcon: const Icon(Icons.home_filled),
         label: "Home",
-        page: const AdvertisementGrid(),
+        page: const Home(),
     ),
 
     MenuOption(
@@ -65,7 +64,8 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        padding: EdgeInsets.only(top: 75.h, left: 25.w, right:25.w),
         child: _widgetOptions.elementAt(_selectedIndex).page,
       ),
       bottomNavigationBar: BottomNavigationBar(

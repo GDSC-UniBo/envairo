@@ -24,12 +24,15 @@ class AdvertisementCard extends StatelessWidget{
       child: Column(
         children: [
           Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(borderRadius.h),
-                  topRight: Radius.circular(borderRadius.h)
+            child: SizedBox(
+              width: double.maxFinite,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(borderRadius.h),
+                    topRight: Radius.circular(borderRadius.h)
+                ),
+                child: Image.network(imageUrl, fit: BoxFit.cover),
               ),
-              child: Image.network(imageUrl, fit: BoxFit.cover),
             ),
           ),
 
@@ -37,7 +40,7 @@ class AdvertisementCard extends StatelessWidget{
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
+                    padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 30.w),
                     width: double.maxFinite,
                     child: Text(title,
                       style: Theme.of(context).textTheme.headline6,
@@ -46,6 +49,9 @@ class AdvertisementCard extends StatelessWidget{
                   ),
 
                   ListTile(
+                    dense: true,
+                    minVerticalPadding: 0,
+                    minLeadingWidth: 0,
                     leading: ClipOval(
                       child: Image.network(sellerImage,
                         height: 55.h,

@@ -9,14 +9,12 @@ class Messages extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: ToggleTab(
-          labels: labels,
-          children: [
-            ChatList(),
-            NotificationList(),
-          ]
-      ),
+    return const ToggleTab(
+        labels: labels,
+        children: [
+          ChatList(),
+          NotificationList(),
+        ]
     );
   }
 }

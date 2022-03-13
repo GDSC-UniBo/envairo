@@ -3,7 +3,6 @@ import 'package:envairo/models/user.dart';
 import 'package:envairo/view/widgets/advertisement_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AdvertisementGrid extends StatelessWidget {
   const AdvertisementGrid({Key? key}) : super(key: key);
@@ -15,7 +14,7 @@ class AdvertisementGrid extends StatelessWidget {
     User u1 = User(email: "user@mail.com", name: "Mario", username: "user123");
     User u2 = User(email: "user@mail.com", name: "Luigi", username: "user456");
     User u3 =
-        User(email: "user@mail.com", name: "Francesco", username: "user789");
+    User(email: "user@mail.com", name: "Francesco", username: "user789");
 
     // TODO: Fetch from API
     List<Advertisement> advs = [
@@ -31,23 +30,14 @@ class AdvertisementGrid extends StatelessWidget {
       Advertisement(id: 10, seller: u3, title: "Product 10"),
       Advertisement(id: 11, seller: u3, title: "Product 11"),
     ];
-
-    var advCards = advs
-        .map((Advertisement x) => AdvertisementCard(
+    return GridView.count(
+        crossAxisCount: 2,
+        children: advs.map((Advertisement x) => AdvertisementCard(
             imageUrl: placeholderImage,
             title: x.title,
             sellerImage: placeholderImage,
-            sellerName: x.seller.name))
-        .toList();
-
-    return Column(children: [
-      Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-              padding: const EdgeInsets.only(left: 32, top: 32),
-              child:
-                  const Text("Lorem Ipsum", style: TextStyle(fontSize: 40)))),
-      Expanded(child: GridView.count(crossAxisCount: 2, children: advCards))
-    ]);
+            sellerName: x.seller.name)
+        ).toList()
+    );
   }
 }

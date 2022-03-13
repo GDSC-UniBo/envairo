@@ -1,9 +1,7 @@
 import 'package:envairo/view/pages/chat_view.dart';
-import 'package:envairo/view/widgets/toggle_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'login_or_signup.dart';
 
 class ChatList extends StatelessWidget{
   static const double leadingSize = 95;
