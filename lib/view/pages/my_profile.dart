@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:envairo/view/pages/profile.dart';
 import 'package:envairo/view/pages/reviews.dart';
 import 'package:envairo/view/widgets/toggle_tab.dart';
@@ -15,10 +17,20 @@ class MyProfile extends StatelessWidget {
         padding: EdgeInsets.only(top: 20.h),
         child: Column(children: [
           Row(children: [
-            const Icon(Icons.arrow_back),
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                log('TODO');
+              },
+            ),
             SizedBox(width: 10.w),
             const Expanded(child: Text("lorem.ipsum")),
-            const Icon(CupertinoIcons.ellipsis_vertical)
+            IconButton(
+              icon: const Icon(CupertinoIcons.ellipsis_vertical),
+              onPressed: () {
+                log('TODO');
+              },
+            ),
           ]),
           const Expanded(
               child: ToggleTab(labels: labels, children: [
