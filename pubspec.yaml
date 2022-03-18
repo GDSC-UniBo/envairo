@@ -41,6 +41,7 @@ dependencies:
   mime: ^1.0.1
   open_file: ^3.2.1
   uuid: ^3.0.6
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:
