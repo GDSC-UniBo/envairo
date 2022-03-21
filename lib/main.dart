@@ -1,5 +1,5 @@
 import 'package:envairo/router.dart';
-import 'package:envairo/view/pages/main_page.dart';
+import 'package:envairo/view/pages/login_or_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,15 +27,11 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primaryColor: Colors.greenAccent,
                 visualDensity: VisualDensity.adaptivePlatformDensity,
-
               ),
-              initialRoute: MainPage.route,
+              initialRoute: LoginOrSignup.route,
               onGenerateRoute: RouteGenerator().generateRoute,
             );
-          }
-      ),
+          }),
     );
   }
-
-
 }

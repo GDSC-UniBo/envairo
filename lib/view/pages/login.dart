@@ -1,4 +1,5 @@
 import 'package:envairo/router.dart';
+import 'package:envairo/view/pages/main_page.dart';
 import 'package:envairo/view/pages/sign_up.dart';
 import 'package:envairo/view/widgets/round_button.dart';
 import 'package:envairo/view/widgets/textbox.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatelessWidget {
-
   static const String route = '/login';
 
   const LogIn({Key? key}) : super(key: key);
@@ -50,36 +50,29 @@ class LogIn extends StatelessWidget {
                   ),
                 ),
                 buttonColor: Theme.of(context).primaryColor,
-                onTap: onTapLogIn,
+                onTap: () => onTapLogIn(context),
               ),
             ),
           ),
-          Row(
-              children: const [
-                Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                      indent: 50,
-                      endIndent: 20,
-                      height: 40,
-                    )
-                ),
-
-                Text("or"),
-
-                Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                      indent: 20,
-                      endIndent: 50,
-                      height: 40,
-                    )
-                ),
-              ]
-          )
-          ,
+          Row(children: const [
+            Expanded(
+                child: Divider(
+              thickness: 1,
+              color: Colors.black,
+              indent: 50,
+              endIndent: 20,
+              height: 40,
+            )),
+            Text("or"),
+            Expanded(
+                child: Divider(
+              thickness: 1,
+              color: Colors.black,
+              indent: 20,
+              endIndent: 50,
+              height: 40,
+            )),
+          ]),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: SizedBox(
@@ -93,7 +86,7 @@ class LogIn extends StatelessWidget {
                   ),
                 ),
                 buttonColor: Theme.of(context).primaryColor,
-                onTap: onTapLogInFacebook,
+                onTap: () => onTapLogIn(context),
               ),
             ),
           ),
@@ -110,7 +103,7 @@ class LogIn extends StatelessWidget {
                   ),
                 ),
                 buttonColor: Theme.of(context).primaryColor,
-                onTap: onTapLogInGoogle,
+                onTap: () => onTapLogIn(context),
               ),
             ),
           ),
@@ -147,8 +140,8 @@ class LogIn extends StatelessWidget {
     );
   }
 
-  void onTapLogIn() {
-    //TODO
+  void onTapLogIn(context) {
+    openMainPage(context);
   }
 
   void onTapLogInFacebook() {
@@ -157,6 +150,13 @@ class LogIn extends StatelessWidget {
 
   void onTapLogInGoogle() {
     //TODO
+  }
+
+  void openMainPage(context) {
+    Navigator.pushReplacement(
+      context,
+      RouteGenerator().generateRoute(const RouteSettings(name: MainPage.route)),
+    );
   }
 
   void onTapToSignUp(context) {
