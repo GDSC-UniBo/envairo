@@ -7,12 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../router.dart';
 
 class LoginOrSignup extends StatelessWidget {
-  static const String route = '/login_or_signup';
+  static const String route = '/';
 
   const LoginOrSignup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print("LogInOrSignUp build methos called");
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -95,13 +96,17 @@ class LoginOrSignup extends StatelessWidget {
     );
   }
 
-  void onTapSignUp(context) => Navigator.pushReplacement(
-        context,
-        RouteGenerator().generateRoute(const RouteSettings(name: SignUp.route)),
-      );
+  void onTapSignUp(context) {
+    Navigator.pushReplacement(
+      context,
+      RouteGenerator().generateRoute(const RouteSettings(name: SignUp.route)),
+    );
+  }
 
-  void onTapLogIn(context) => Navigator.pushReplacement(
-        context,
-        RouteGenerator().generateRoute(const RouteSettings(name: LogIn.route)),
-      );
+  void onTapLogIn(context) {
+    Navigator.pushReplacement(
+      context,
+      RouteGenerator().generateRoute(const RouteSettings(name: LogIn.route)),
+    );
+  }
 }

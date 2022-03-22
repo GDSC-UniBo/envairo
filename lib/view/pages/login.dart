@@ -3,13 +3,30 @@ import 'package:envairo/view/pages/main_page.dart';
 import 'package:envairo/view/pages/sign_up.dart';
 import 'package:envairo/view/widgets/round_button.dart';
 import 'package:envairo/view/widgets/textbox.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class LogIn extends StatelessWidget {
+import '../../src/authentication.dart';
+
+class LogIn extends StatefulWidget {
+  const LogIn({Key? key}) : super(key: key);
   static const String route = '/login';
 
-  const LogIn({Key? key}) : super(key: key);
+  @override
+  _LogInFormState createState() => _LogInFormState();
+}
+
+class _LogInFormState extends State<LogIn> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +44,15 @@ class LogIn extends StatelessWidget {
             height: 10,
           ),
           MyTextBox(
-            key: key,
             hintText: "Email",
             keyboardType: TextInputType.emailAddress,
+            controller: emailController,
           ),
           MyTextBox(
-            key: key,
             hintText: "Password",
             obscureText: true,
             keyboardType: TextInputType.visiblePassword,
+            controller: passwordController,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -86,7 +103,7 @@ class LogIn extends StatelessWidget {
                   ),
                 ),
                 buttonColor: Theme.of(context).primaryColor,
-                onTap: () => onTapLogIn(context),
+                onTap: onTapLogInFacebook,
               ),
             ),
           ),
@@ -103,7 +120,7 @@ class LogIn extends StatelessWidget {
                   ),
                 ),
                 buttonColor: Theme.of(context).primaryColor,
-                onTap: () => onTapLogIn(context),
+                onTap: onTapLogInGoogle,
               ),
             ),
           ),
@@ -141,15 +158,32 @@ class LogIn extends StatelessWidget {
   }
 
   void onTapLogIn(context) {
-    openMainPage(context);
+    AuthenticationHelper()
+        .signIn(email: emailController.text, password: passwordController.text)
+        .then((result) {
+      if (result == null) {
+        if (kDebugMode) {
+          var user = AuthenticationHelper().user!.displayName;
+          print("Logged in with display name $user");
+        }
+        openMainPage(context);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+            result,
+            style: const TextStyle(fontSize: 16),
+          ),
+        ));
+      }
+    });
   }
 
   void onTapLogInFacebook() {
-    //TODO
+    openMainPage(context);
   }
 
   void onTapLogInGoogle() {
-    //TODO
+    openMainPage(context);
   }
 
   void openMainPage(context) {

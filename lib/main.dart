@@ -4,7 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart'; // new
+import 'firebase_options.dart';                    // new
+
+
+Future main() async {
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+  print("stopwatch start ${stopwatch.elapsed}");
+
+  WidgetsFlutterBinding.ensureInitialized();
+  print("stopwatch WidgetsFlutterBinding ${stopwatch.elapsed}");
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  print("stopwatch Firebase.initializeApp ${stopwatch.elapsed}");
+
   runApp(const MyApp());
 }
 
