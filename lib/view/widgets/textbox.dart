@@ -9,17 +9,19 @@ class MyTextBox extends StatelessWidget {
   final bool obscureText;
   final TextAlign textAlign;
   final TextEditingController? controller;
+  final int? maxLines;
 
-  const MyTextBox(
-      {Key? key,
-      this.hintText,
-      this.onSubmitted,
-      this.onChange,
-      this.keyboardType,
-      this.obscureText = false,
-      this.textAlign = TextAlign.left,
-      this.controller})
-      : super(key: key);
+  const MyTextBox({
+    Key? key,
+    this.hintText,
+    this.onSubmitted,
+    this.onChange,
+    this.keyboardType,
+    this.obscureText = false,
+    this.textAlign = TextAlign.left,
+    this.controller,
+    this.maxLines = 1
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +37,21 @@ class MyTextBox extends StatelessWidget {
         onChanged: onChange,
         keyboardType: keyboardType,
         obscureText: obscureText,
+        maxLines: maxLines,
         textAlignVertical: TextAlignVertical.bottom,
         decoration: InputDecoration(
           hintText: hintText,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Colors.transparent, width: 0),
+          border: const UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Colors.transparent, width: 0),
+          enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey),
           ),
-          filled: true,
-          fillColor: Colors.grey[200],
+          focusedBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey),
+          ),
+          filled: false,
+          //fillColor: Colors.grey[200],
         ),
       ),
     );

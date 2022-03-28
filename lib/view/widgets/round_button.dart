@@ -9,10 +9,10 @@ class RoundButton extends StatelessWidget {
 
   const RoundButton(
       {Key? key,
-      required this.child,
-      required this.buttonColor,
-      this.borderColor,
-      required this.onTap})
+        required this.child,
+        required this.buttonColor,
+        this.borderColor,
+        required this.onTap})
       : super(key: key);
 
   @override
