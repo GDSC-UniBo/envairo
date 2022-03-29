@@ -23,28 +23,13 @@ class LoginOrSignup extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                child: Text(
-                  "HELLO",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 60,
-                    color: Colors.black,
-                    decoration: TextDecoration.none,
-                  ),
-                ),
-              ),
-            ),
             const SizedBox(
               height: 80,
             ),
-            Image.network(
-              "https://a1auto.sfo2.cdn.digitaloceanspaces.com/assets/logo-placeholder.png",
-              height: 200.h,
-              width: 200.h,
+            Image.asset(
+              "assets/images/logo.png",
+              height: 250.h,
+              width: 600.h,
             ),
             const SizedBox(
               height: 100,

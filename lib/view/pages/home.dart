@@ -11,8 +11,11 @@ class Home extends StatelessWidget {
     return Column(children: [
       Align(
         alignment: Alignment.centerLeft,
-        child:
-            Text("Lorem Ipsum", style: Theme.of(context).textTheme.headline4),
+        child: Image.asset(
+          "assets/images/logo.png",
+          width: 150.0,
+          height: 100.0,
+        ),
       ),
       Expanded(
         child: AdvertisementGrid(advs: advs),
