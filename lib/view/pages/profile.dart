@@ -4,140 +4,163 @@ import 'package:envairo/models/advertisement.dart';
 import 'package:envairo/models/user.dart';
 import 'package:envairo/view/pages/advertisement_grid.dart';
 import 'package:envairo/view/widgets/advertisement_card.dart';
+import 'package:envairo/view/widgets/custom_card.dart';
+import 'package:envairo/view/widgets/round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Profile extends StatelessWidget {
-  static const double borderRadius = 50;
-  static const placeholderImage =
-      "https://www.artemedialab.it/wp-content/uploads/2019/04/immagini-sfondo-1-700x400.jpg";
+  final User user;
 
-  const Profile({Key? key}) : super(key: key);
+  Profile({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String placeholderImage =
-        "https://www.artemedialab.it/wp-content/uploads/2019/04/immagini-sfondo-1-700x400.jpg";
-    User u1 = User(email: "user@mail.com", name: "Mario", username: "user123");
-    User u2 = User(email: "user@mail.com", name: "Luigi", username: "user456");
-    User u3 =
-        User(email: "user@mail.com", name: "Francesco", username: "user789");
-
-    // TODO: Fetch from API
-    List<Advertisement> advs = [
-      Advertisement(id: 1, seller: u1, title: "Product 1"),
-      Advertisement(id: 2, seller: u2, title: "Product 2"),
-      Advertisement(id: 3, seller: u1, title: "Product 3"),
-      Advertisement(id: 4, seller: u3, title: "Product 4"),
-      Advertisement(id: 5, seller: u3, title: "Product 5"),
-      Advertisement(id: 6, seller: u2, title: "Product 6"),
-      Advertisement(id: 7, seller: u1, title: "Product 7"),
-      Advertisement(id: 8, seller: u3, title: "Product 8"),
-      Advertisement(id: 9, seller: u3, title: "Product 9"),
-      Advertisement(id: 10, seller: u3, title: "Product 10"),
-      Advertisement(id: 11, seller: u3, title: "Product 11"),
-    ];
+    bool isPersonalProfile = true;
+    List<Advertisement> advs = [];
 
     return Container(
         child: Column(
       children: [
-        Card(
-            margin: EdgeInsets.zero,
+        CustomCard(
             child: Row(
-              children: [
-                CircleAvatar(
-                  radius: borderRadius,
-                  child: SizedBox(
-                    width: 100.w,
-                    height: 100.h,
-                    child: ClipOval(child: Image.network(placeholderImage)),
+          children: [
+            ClipOval(
+              child: Image.network(
+                user.picture,
+                height: 100.h,
+                width: 100.h,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Expanded(child: Container()),
+            Expanded(
+              flex: 8,
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(user.name),
                   ),
-                ),
-                Expanded(
-                  child: Column(
+                  Row(
                     children: [
-                      Text("lorem.ipsum"),
-                      RatingBar.builder(
-                        initialRating: 4,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        ignoreGestures: true,
-                        itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
-                      ),
+                      Expanded(
+                          child: RatingBar.builder(
+                            initialRating: user.reputation ?? 0,
+                            minRating: 1,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            ignoreGestures: true,
+                            itemCount: 5,
+                            itemSize: 30.0,
+                            itemPadding:
+                                const EdgeInsets.symmetric(horizontal: 0.1),
+                            itemBuilder: (context, _) => const Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
+                          flex: 7),
+                      Expanded(
+                          flex: 3,
+                          child: Text(user.reviewCount.toString() + " reviews"))
                     ],
-                  ),
-                )
-              ],
-            )),
-        Card(
-            child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  children: [
-                    Row(
-                      //TODO: Is it possible to not replicate the same padding three times?
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(right: 10),
-                            child: Icon(Icons.check_circle_outline)),
-                        Text("E-mail, Google, Facebook")
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(right: 10),
-                            child: Icon(Icons.location_pin)),
-                        Text("Soundsvall, Sweden")
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(right: 10),
-                            child: Icon(Icons.rss_feed)),
-                        Text("3 follower, 5 follows")
-                      ],
-                    ),
-                  ],
-                ))),
-        Card(
+                  )
+                ],
+              ),
+            ),
+          ],
+        )),
+        CustomCard(
             child: Column(
           children: [
             Row(
               children: [
-                Text(
-                  advs.length.toString() + " advertisments",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                Expanded(
-                  child: Container(),
-                ),
-                TextButton(
-                  child: Row(children: [
-                    Icon(Icons.tune_outlined, color: Colors.blue),
-                    Text("Filters", style: TextStyle(color: Colors.blue)),
-                  ]),
-                  onPressed: () {
-                    log("Prova");
-                  },
-                ),
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Icon(Icons.check_circle_outline)),
+                Text(user.email)
               ],
             ),
-            //TODO: Fix errors
-            // AdvertisementGrid()
+            Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Icon(Icons.location_pin)),
+                Text("Soundsvall, Sweden")
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Icon(Icons.rss_feed)),
+                Text("3 follower, 5 follows")
+              ],
+            ),
+            !isPersonalProfile
+                ? Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        RoundButton(
+                          child: Text(
+                            "Message",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 20,
+                              decoration: TextDecoration.none,
+                            ),
+                          ),
+                          buttonColor: Colors.white,
+                          borderColor: Theme.of(context).primaryColor,
+                          onTap: () => {},
+                        ),
+                        SizedBox(width: 20),
+                        RoundButton(
+                          child: Text(
+                            "Follow",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              decoration: TextDecoration.none,
+                            ),
+                          ),
+                          buttonColor: Theme.of(context).primaryColor,
+                          onTap: () => {},
+                        ),
+                      ],
+                    ))
+                : Container()
           ],
-        ))
+        )),
+        CustomCard(
+            child: Expanded(
+                child: Row(
+          children: [
+            Text(
+              advs.length.toString() + " advertisments",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Expanded(
+              child: Container(),
+            ),
+            TextButton(
+              child: Row(children: const [
+                Icon(Icons.tune_outlined, color: Colors.blue),
+                Text("Filters", style: TextStyle(color: Colors.blue)),
+              ]),
+              onPressed: () {
+                //log("Prova");
+              },
+            ),
+          ],
+        ))),
+        Expanded(child: AdvertisementGrid(advs: advs)), //TODO: Fix error
       ],
     ));
   }
