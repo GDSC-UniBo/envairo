@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:envairo/models/user.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 class Advertisement {
@@ -13,6 +16,17 @@ class Advertisement {
   final DateTime? availabilityTime;
   final User seller;
   //Queue stuffs
+
+  static List<Advertisement> generateFake(int advNumber, int usersNumber) {
+    List<User> users = User.generateFake(usersNumber);
+    return List<int>.generate(advNumber, (i) => i + 1)
+        .map((int i) => Advertisement(
+            id: i,
+            seller: users[Random().nextInt(users.length)],
+            title: faker.vehicle.model(),
+            mainImage: faker.image.image(random: true)))
+        .toList();
+  }
 
   Advertisement(
       {required this.id,

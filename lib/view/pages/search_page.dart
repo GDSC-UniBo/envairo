@@ -9,7 +9,8 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Advertisement> advs = [];
+    List<Advertisement> advs = Advertisement.generateFake(20, 5);
+
     return Column(children: [
       TextField(
         decoration: InputDecoration(

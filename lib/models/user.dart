@@ -1,4 +1,5 @@
 import 'package:envairo/models/position.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 class User {
@@ -23,6 +24,15 @@ class User {
       this.position,
       this.reputation,
       this.reviewCount});
+
+  static List<User> generateFake(int number) {
+    return List<int>.generate(number, (i) => i + 1)
+        .map((int i) => User(
+            email: faker.internet.email(),
+            username: faker.internet.userName(),
+            name: faker.person.name()))
+        .toList();
+  }
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(

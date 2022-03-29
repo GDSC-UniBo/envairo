@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:faker/faker.dart';
 
 import 'package:envairo/models/advertisement.dart';
 import 'package:envairo/models/user.dart';
@@ -18,7 +19,8 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isPersonalProfile = true;
-    List<Advertisement> advs = [];
+
+    List<Advertisement> advs = Advertisement.generateFake(20, 5);
 
     return Container(
         child: Column(
