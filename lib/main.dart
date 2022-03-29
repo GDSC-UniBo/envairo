@@ -5,8 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:firebase_core/firebase_core.dart'; // new
-import 'firebase_options.dart';                    // new
-
+import 'firebase_options.dart'; // new
 
 Future main() async {
   final stopwatch = Stopwatch();
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               title: 'Envairo',
               theme: ThemeData(
-                primaryColor: Colors.greenAccent,
+                primaryColor: Color.fromARGB(255, 0, 118, 122),
                 visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
               initialRoute: LoginOrSignup.route,

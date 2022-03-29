@@ -37,8 +37,8 @@ class _LogInFormState extends State<LogIn> {
             const SizedBox(
               height: 70,
             ),
-            Image.network(
-              "https://a1auto.sfo2.cdn.digitaloceanspaces.com/assets/logo-placeholder.png",
+            Image.asset(
+              "assets/images/logo.png",
               scale: 1.5,
             ),
             const SizedBox(
