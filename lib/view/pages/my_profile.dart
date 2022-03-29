@@ -7,7 +7,6 @@ import 'package:envairo/view/pages/login_or_signup.dart';
 import 'package:envairo/view/pages/profile.dart';
 import 'package:envairo/view/pages/reviews.dart';
 import 'package:envairo/view/widgets/toggle_tab.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,11 +53,11 @@ class MyProfile extends StatelessWidget {
           ]),
           Expanded(
               child: ToggleTab(labels: labels, children: [
-            Profile(
-              user: user,
-            ),
-            Reviews(),
-          ]))
+                Profile(
+                  user: user,
+                ),
+                Reviews(),
+              ]))
         ]));
   }
 }

@@ -45,6 +45,8 @@ class AdvertisementCard extends StatelessWidget{
                     child: Text(title,
                       style: Theme.of(context).textTheme.headline6,
                       textAlign: TextAlign.left,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
 
@@ -62,6 +64,7 @@ class AdvertisementCard extends StatelessWidget{
                     title: Text(sellerName,
                       style: Theme.of(context).textTheme.subtitle2,
                       textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   )
                 ],
