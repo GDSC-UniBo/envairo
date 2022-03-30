@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:envairo/models/review.dart';
 import 'package:envairo/models/user.dart';
 import 'package:envairo/router.dart';
 import 'package:envairo/src/authentication.dart';
@@ -22,6 +23,20 @@ class MyProfile extends StatelessWidget {
         name: "John",
         reputation: 2.3,
         reviewCount: 232);
+
+    final List<User> others = User.generateFake(5);
+
+    final List<Review> reviews = [
+      Review(target: user, author: others[0], rating: 3.5),
+      Review(
+          target: user,
+          author: others[1],
+          rating: 5,
+          text: "The product was in perfect conditions"),
+      Review(target: user, author: others[2], rating: 4),
+      Review(target: user, author: others[3], rating: 4.5),
+      Review(target: user, author: others[4], rating: 5),
+    ];
     return Container(
         padding: EdgeInsets.only(top: 20.h),
         child: Column(children: [
@@ -53,11 +68,11 @@ class MyProfile extends StatelessWidget {
           ]),
           Expanded(
               child: ToggleTab(labels: labels, children: [
-                Profile(
-                  user: user,
-                ),
-                Reviews(),
-              ]))
+            Profile(
+              user: user,
+            ),
+            Reviews(reviews: reviews),
+          ]))
         ]));
   }
 }
