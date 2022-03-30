@@ -1,5 +1,6 @@
 import 'package:envairo/view/widgets/toggle_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'chat_list.dart';
 import 'notification_list.dart';
 
@@ -9,12 +10,15 @@ class Messages extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const ToggleTab(
-        labels: labels,
-        children: [
-          ChatList(),
-          NotificationList(),
-        ]
+    return Padding(
+      padding: EdgeInsets.only(top: 75.h, left: 10.w, right: 10.w),
+      child: const ToggleTab(
+          labels: labels,
+          children: [
+            ChatList(),
+            NotificationList(),
+          ]
+      ),
     );
   }
 }

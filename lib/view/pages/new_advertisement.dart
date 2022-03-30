@@ -27,7 +27,7 @@ class NewAdvertisement extends StatelessWidget{
 
   Widget _uploadPhoto(BuildContext context){
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40.h),
+      padding: EdgeInsets.symmetric(vertical: 110.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -67,7 +67,7 @@ class NewAdvertisement extends StatelessWidget{
 
   Widget _titleDescription(BuildContext context){
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40.h),
+      padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 10.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(70.h)),
         color: Colors.white,

@@ -1,5 +1,4 @@
 import 'package:envairo/models/advertisement.dart';
-import 'package:envairo/models/user.dart';
 import 'package:envairo/view/widgets/advertisement_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +22,7 @@ class AdvertisementGrid extends StatelessWidget {
             title: adv.title,
             sellerImage: adv.seller.picture,
             sellerName: adv.seller.name))
-            .toList());
+            .toList()
+    );
   }
 }

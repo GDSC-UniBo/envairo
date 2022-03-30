@@ -11,23 +11,27 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Advertisement> advs = Advertisement.generateFake(20, 5);
 
-    return Column(children: [
-      TextField(
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.search),
-          hintText: "Search products",
-          fillColor: Colors.grey[200],
-          filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(1.sh),
-            borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+    return Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 75.h, left: 25.w, right: 25.w),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.search),
+                hintText: "Search products",
+                fillColor: Colors.grey[200],
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(1.sh),
+                  borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+                ),
+                contentPadding: EdgeInsets.fromLTRB(30.0.w, 29.0.w, 30.0.w, 29.0.w),
+              ),
+            ),
           ),
-          contentPadding: EdgeInsets.fromLTRB(30.0.w, 29.0.w, 30.0.w, 29.0.w),
-        ),
-      ),
-      Expanded(
-        child: AdvertisementGrid(advs: advs),
-      ),
-    ]);
+          Expanded(
+            child: AdvertisementGrid(advs: advs),
+          ),
+        ]);
   }
 }

@@ -26,71 +26,71 @@ class Profile extends StatelessWidget {
         children: [
           CustomCard(
               child: Row(
-            children: [
-              ClipOval(
-                child: Image.network(
-                  user.picture,
-                  height: 100.h,
-                  width: 100.h,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Expanded(child: Container()),
-              Expanded(
-                flex: 8,
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(user.name),
+                children: [
+                  ClipOval(
+                    child: Image.network(
+                      user.picture,
+                      height: 100.h,
+                      width: 100.h,
+                      fit: BoxFit.cover,
                     ),
-                    Row(
+                  ),
+                  Expanded(child: Container()),
+                  Expanded(
+                    flex: 8,
+                    child: Column(
                       children: [
-                        Expanded(
-                            child:
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(user.name),
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                                child:
                                 CustomRatingBar(rating: user.reputation ?? 0),
-                            flex: 7),
-                        Expanded(
-                            flex: 3,
-                            child:
+                                flex: 7),
+                            Expanded(
+                                flex: 3,
+                                child:
                                 Text(user.reviewCount.toString() + " reviews"))
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                ),
-              ),
-            ],
-          )),
+                    ),
+                  ),
+                ],
+              )),
           CustomCard(
               child: Column(
-            children: [
-              Row(
                 children: [
-                  Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(Icons.check_circle_outline)),
-                  Text(user.email)
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(Icons.location_pin)),
-                  Text("Soundsvall, Sweden")
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(Icons.rss_feed)),
-                  Text("3 follower, 5 follows")
-                ],
-              ),
-              !isPersonalProfile
-                  ? Padding(
-                      padding: EdgeInsets.all(10),
+                  Row(
+                    children: [
+                      const Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(Icons.check_circle_outline)),
+                      Text(user.email)
+                    ],
+                  ),
+                  Row(
+                    children: const [
+                      Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(Icons.location_pin)),
+                      Text("Soundsvall, Sweden")
+                    ],
+                  ),
+                  Row(
+                    children: const [
+                      Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(Icons.rss_feed)),
+                      Text("3 follower, 5 follows")
+                    ],
+                  ),
+                  !isPersonalProfile
+                      ? Padding(
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         children: [
                           RoundButton(
@@ -106,9 +106,9 @@ class Profile extends StatelessWidget {
                             borderColor: Theme.of(context).primaryColor,
                             onTap: () => {},
                           ),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           RoundButton(
-                            child: Text(
+                            child: const Text(
                               "Follow",
                               style: TextStyle(
                                 color: Colors.white,
@@ -121,31 +121,31 @@ class Profile extends StatelessWidget {
                           ),
                         ],
                       ))
-                  : Container()
-            ],
-          )),
+                      : Container()
+                ],
+              )),
           CustomCard(
               child: Row(
-            children: [
-              Text(
-                advs.length.toString() + " advertisments",
-                style:
+                children: [
+                  Text(
+                    advs.length.toString() + " advertisments",
+                    style:
                     const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Expanded(
-                child: Container(),
-              ),
-              TextButton(
-                child: Row(children: const [
-                  Icon(Icons.tune_outlined, color: Colors.blue),
-                  Text("Filters", style: TextStyle(color: Colors.blue)),
-                ]),
-                onPressed: () {
-                  //log("Prova");
-                },
-              ),
-            ],
-          )),
+                  ),
+                  Expanded(
+                    child: Container(),
+                  ),
+                  TextButton(
+                    child: Row(children: const [
+                      Icon(Icons.tune_outlined, color: Colors.blue),
+                      Text("Filters", style: TextStyle(color: Colors.blue)),
+                    ]),
+                    onPressed: () {
+                      //log("Prova");
+                    },
+                  ),
+                ],
+              )),
           AdvertisementGrid(
             advs: advs,
             physics: const NeverScrollableScrollPhysics(),

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:envairo/models/review.dart';
 import 'package:envairo/models/user.dart';
 import 'package:envairo/router.dart';
@@ -25,7 +23,7 @@ class MyProfile extends StatelessWidget {
         .toList();
 
     return Container(
-        padding: EdgeInsets.only(top: 20.h),
+        padding: EdgeInsets.only(top: 70.h, left: 25.w, right: 25.w),
         child: Column(children: [
           Row(children: [
             IconButton(

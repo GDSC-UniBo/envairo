@@ -62,7 +62,6 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 75.h, left: 25.w, right: 25.w),
         child: _widgetOptions.elementAt(_selectedIndex).page,
       ),
       bottomNavigationBar: BottomNavigationBar(
