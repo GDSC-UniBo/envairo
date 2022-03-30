@@ -80,6 +80,7 @@ flutter:
   assets:
     - messages.json
     - assets/images/
+    - assets/images/review_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

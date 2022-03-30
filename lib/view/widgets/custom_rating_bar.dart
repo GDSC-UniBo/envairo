@@ -9,18 +9,19 @@ class CustomRatingBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RatingBar.builder(
+    return RatingBar(
       initialRating: rating,
       minRating: 1,
       direction: Axis.horizontal,
       allowHalfRating: true,
       ignoreGestures: true,
       itemCount: 5,
-      itemSize: 30.0,
-      itemPadding: const EdgeInsets.symmetric(horizontal: 0.1),
-      itemBuilder: (context, _) => const Icon(
-        Icons.star,
-        color: Colors.amber,
+      itemSize: 25.0,
+      itemPadding: const EdgeInsets.symmetric(horizontal: 1),
+      ratingWidget: RatingWidget(
+        full: Image.asset('assets/images/review_icons/heart.png'),
+        half: Image.asset('assets/images/review_icons/heart_half.png'),
+        empty: Image.asset('assets/images/review_icons/heart_border.png'),
       ),
       onRatingUpdate: (rating) {
         print(rating);
