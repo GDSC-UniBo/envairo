@@ -34,6 +34,53 @@ class User {
         .toList();
   }
 
+  static List<User> generatePlaceholders() {
+    return [
+      const User(
+          email: "john.doe@mail.com",
+          username: "john_doe",
+          name: "John Doe",
+          // picture: "",
+          reputation: 4.7,
+          reviewCount: 19),
+      const User(
+          email: "gilda.jeffry@mail.com",
+          username: "gilda_jeffry",
+          name: "Gilda",
+          // picture: "",
+          reputation: 4.2,
+          reviewCount: 5),
+      const User(
+          email: "maureen.mertz@mail.com",
+          username: "maureen_mertz",
+          name: "Maureen",
+          // picture: "",
+          reputation: 4.5,
+          reviewCount: 82),
+      const User(
+          email: "favian.hertha@mail.com",
+          username: "favian_hertha",
+          name: "Favian",
+          // picture: "",
+          reputation: 3.9,
+          reviewCount: 21),
+      const User(
+          email: "reva.bauch@mail.com",
+          username: "reva_bauch",
+          name: "Reva",
+          // picture: "",
+          reputation: 4.9,
+          reviewCount: 11),
+      const User(
+          email: "trycia.ernser@mail.com",
+          username: "trycia_ernser",
+          name: "Trycia",
+          // picture: "",
+          reputation: 4.2,
+          reviewCount: 2),
+    ];
+  }
+
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       email: json['email'],
