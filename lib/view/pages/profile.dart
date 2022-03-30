@@ -17,7 +17,8 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isPersonalProfile = true;
 
-    List<Advertisement> advs = Advertisement.generateFake(20, 5);
+    List<Advertisement> advs =
+        Advertisement.generatePlaceholders().sublist(0, 2);
 
     return SingleChildScrollView(
       child: Column(

@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Advertisement> advs = Advertisement.generateFake(20, 5);
+    List<Advertisement> advs = Advertisement.generatePlaceholders();
 
     return Column(children: [
       Align(
