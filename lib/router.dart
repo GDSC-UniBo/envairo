@@ -3,6 +3,7 @@ import 'package:envairo/view/pages/login.dart';
 import 'package:envairo/view/pages/login_or_signup.dart';
 import 'package:envairo/view/pages/main_page.dart';
 import 'package:envairo/view/pages/sign_up.dart';
+import 'package:envairo/view/pages/user_profile.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -14,6 +15,7 @@ class RouteGenerator {
     SignUp.route: (context, _) => const SignUp(),
     LoginOrSignup.route: (context, _) => const LoginOrSignup(),
     ChatView.route: (context, _) => const ChatView(),
+    UserProfile.route: (context, _) => const UserProfile()
   };
 
   Route<dynamic> generateRoute(RouteSettings settings) {
