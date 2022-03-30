@@ -15,10 +15,11 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isPersonalProfile = true;
+    bool isPersonalProfile = (user == User.generatePlaceholders()[0]);
 
-    List<Advertisement> advs =
-        Advertisement.generatePlaceholders().sublist(0, 2);
+    List<Advertisement> advs = Advertisement.generatePlaceholders()
+        .where((Advertisement element) => element.seller == user)
+        .toList();
 
     return SingleChildScrollView(
       child: Column(

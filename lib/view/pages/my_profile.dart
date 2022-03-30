@@ -20,18 +20,10 @@ class MyProfile extends StatelessWidget {
     List<User> users = User.generatePlaceholders();
     final User user = users[0];
 
-    final List<User> others = users.sublist(1);
+    final List<Review> reviews = Review.generatePlaceholders()
+        .where((Review element) => element.target == user)
+        .toList();
 
-    final List<Review> reviews = [
-      Review(
-          target: user,
-          author: others[0],
-          rating: 5,
-          text: "The product was in perfect conditions"),
-      Review(target: user, author: others[2], rating: 4.5),
-      Review(target: user, author: others[3], rating: 4),
-      Review(target: user, author: others[4], rating: 4.5),
-    ];
     return Container(
         padding: EdgeInsets.only(top: 20.h),
         child: Column(children: [
