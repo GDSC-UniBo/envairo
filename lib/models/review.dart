@@ -12,6 +12,26 @@ class Review {
       required this.rating,
       this.text});
 
+  static List<Review> generatePlaceholders() {
+    List<User> users = User.generatePlaceholders();
+    return [
+      Review(target: users[0], author: users[1], rating: 5),
+      Review(target: users[0], author: users[3], rating: 4.5),
+      Review(target: users[0], author: users[4], rating: 4.3),
+      Review(target: users[0], author: users[1], rating: 3.9),
+      Review(target: users[0], author: users[1], rating: 4.5),
+      Review(target: users[0], author: users[1], rating: 4),
+      Review(target: users[0], author: users[1], rating: 5),
+      Review(
+          target: users[2],
+          author: users[1],
+          rating: 5,
+          text: "The product was in perfect conditions"),
+      Review(target: users[2], author: users[3], rating: 4),
+      Review(target: users[2], author: users[4], rating: 4.5),
+    ];
+  }
+
   factory Review.fromJson(Map<String, dynamic> json) {
     return Review(
         target: json["target"],
