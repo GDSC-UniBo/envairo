@@ -16,23 +16,32 @@ class _SearchPageState extends State<SearchPage> {
 
   final Set<Marker> _markers = {
     const Marker(
-        position: LatLng(40.6508946, 16.1456264), markerId: MarkerId("test9")),
+        position: LatLng(44.5038128154261, 11.340519260461816),
+        markerId: MarkerId("test9")),
     const Marker(
-        position: LatLng(42.0481283, 14.709342), markerId: MarkerId("test8")),
+        position: LatLng(44.49887807298449, 11.33857713368443),
+        markerId: MarkerId("test8")),
     const Marker(
-        position: LatLng(45.155062, 11.663693), markerId: MarkerId("test7")),
+        position: LatLng(44.493077052228685, 11.355327977139389),
+        markerId: MarkerId("test7")),
     const Marker(
-        position: LatLng(44.4897103, 11.3131531), markerId: MarkerId("test6")),
+        position: LatLng(44.49099893426057, 11.353143084514828),
+        markerId: MarkerId("test6")),
     const Marker(
-        position: LatLng(40.1484675, 9.0284305), markerId: MarkerId("test5")),
+        position: LatLng(44.498964651012884, 11.339184048302362),
+        markerId: MarkerId("test5")),
     const Marker(
-        position: LatLng(37.7486814, 14.8072024), markerId: MarkerId("test4")),
+        position: LatLng(44.47835545457174, 11.342218621392028),
+        markerId: MarkerId("test4")),
     const Marker(
-        position: LatLng(45.1055772, 9.7201355), markerId: MarkerId("test3")),
+        position: LatLng(44.48692907207651, 11.371836054747176),
+        markerId: MarkerId("test3")),
     const Marker(
-        position: LatLng(42.1311128, 11.9113219), markerId: MarkerId("test2")),
+        position: LatLng(44.496800161735706, 11.345981492023217),
+        markerId: MarkerId("test2")),
     const Marker(
-        position: LatLng(41.9102415, 12.3959112), markerId: MarkerId("test"))
+        position: LatLng(44.493856327376086, 11.324375331624788),
+        markerId: MarkerId("test"))
   };
 
   _onMapCreated(GoogleMapController controller) {
@@ -48,8 +57,8 @@ class _SearchPageState extends State<SearchPage> {
         markers: _markers,
         mapType: MapType.normal,
         initialCameraPosition: const CameraPosition(
-          target: LatLng(42.1311128, 11.9113219),
-          zoom: 5,
+          target: LatLng(44.496800161735706, 11.341126175079747),
+          zoom: 12,
         ),
         onMapCreated: _onMapCreated,
         zoomGesturesEnabled: true,
