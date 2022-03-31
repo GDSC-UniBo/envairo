@@ -17,7 +17,7 @@ class RouteGenerator {
     LoginOrSignup.route: (context, _) => const LoginOrSignup(),
     ChatView.route: (context, _) => const ChatView(),
     UserProfile.route: (context, _) => UserProfile(),
-    AdvertisementDetails.route: (context, item) => AdvertisementDetails(item: item),
+    AdvertisementDetails.route: (context, item) => AdvertisementDetails(advertisement: item),
   };
 
   Route<dynamic> generateRoute(RouteSettings settings) {
