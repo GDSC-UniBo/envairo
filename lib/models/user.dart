@@ -1,6 +1,5 @@
 import 'package:envairo/models/position.dart';
 import 'package:faker/faker.dart';
-import 'package:flutter/material.dart';
 
 class User {
   static const String defaultPicture =
@@ -30,7 +29,8 @@ class User {
         .map((int i) => User(
             email: faker.internet.email(),
             username: faker.internet.userName(),
-            name: faker.person.name()))
+            name: faker.person.name(),
+    ))
         .toList();
   }
 
