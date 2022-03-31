@@ -1,3 +1,4 @@
+import 'package:envairo/view/pages/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../models/advertisement.dart';
@@ -30,12 +31,15 @@ class AdvertisementDetails extends StatelessWidget {
                 CustomCard(
                     child: Row(
                       children: [
-                        ClipOval(
-                          child: Image.asset(
-                            advertisement.seller.picture,
-                            height: 100.h,
-                            width: 100.h,
-                            fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, UserProfile.route, arguments: advertisement.seller),
+                          child: ClipOval(
+                            child: Image.asset(
+                              advertisement.seller.picture,
+                              height: 100.h,
+                              width: 100.h,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Expanded(child: Container()),

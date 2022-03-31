@@ -4,18 +4,19 @@ import 'package:envairo/view/pages/profile.dart';
 import 'package:envairo/view/pages/reviews.dart';
 import 'package:envairo/view/widgets/toggle_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UserProfile extends StatelessWidget {
   static const String route = "/profile/user";
   static const List<String> labels = ["Profile", "Reviews"];
 
-  final User user = User.generatePlaceholders()[2];
+  late final User user;
 
   final List<Review> reviews = Review.generatePlaceholders();
 
-  UserProfile({Key? key}) : super(key: key);
+  UserProfile({Key? key, User? user}) : super(key: key){
+    this.user = user?? User.generatePlaceholders()[2];
+  }
 
   @override
   Widget build(BuildContext context) {

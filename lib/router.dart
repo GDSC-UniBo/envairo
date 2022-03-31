@@ -16,7 +16,7 @@ class RouteGenerator {
     SignUp.route: (context, _) => const SignUp(),
     LoginOrSignup.route: (context, _) => const LoginOrSignup(),
     ChatView.route: (context, _) => const ChatView(),
-    UserProfile.route: (context, _) => UserProfile(),
+    UserProfile.route: (context, user) => UserProfile(user: user),
     AdvertisementDetails.route: (context, item) => AdvertisementDetails(advertisement: item),
   };
 

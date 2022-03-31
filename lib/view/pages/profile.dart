@@ -9,6 +9,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Profile extends StatelessWidget {
+
+
+
   final User user;
 
   const Profile({Key? key, required this.user}) : super(key: key);

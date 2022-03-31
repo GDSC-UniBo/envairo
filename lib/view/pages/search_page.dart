@@ -5,6 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../models/advertisement.dart';
+import '../../models/user.dart';
 import 'advertisement_details.dart';
 
 class SearchPage extends StatefulWidget {
@@ -50,7 +51,13 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[6]
+            arguments: Advertisement(
+                id: 6,
+                seller: User.generatePlaceholders()[1],
+                title: "Tennis chair",
+                description: "I know you need this ;)",
+                mainImage: "https://i.pinimg.com/originals/17/29/46/172946e524382c6785442a2472ecbd30.jpg"
+            ),
         ),
       ),
       Marker(
