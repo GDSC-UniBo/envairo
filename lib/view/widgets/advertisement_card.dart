@@ -25,7 +25,7 @@ class AdvertisementCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius.h)),
         child: GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed(AdvertisementDetails.route, arguments: this),
+          onTap: () => Navigator.of(context).pushNamed(AdvertisementDetails.route, arguments: advertisement),
           child: Column(
             children: [
               Expanded(
