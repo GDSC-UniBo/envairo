@@ -1,6 +1,7 @@
 import 'package:envairo/models/advertisement.dart';
 import 'package:envairo/models/user.dart';
 import 'package:envairo/view/pages/chat_view.dart';
+import 'package:envairo/view/pages/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,14 +55,16 @@ class ChatList extends StatelessWidget {
       onTap: () => Navigator.pushNamed(context, ChatView.route),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ListTile(
-          leading: ClipOval(
-            child: Image.asset(
-              profileImg,
-              height: leadingSize.h,
-              width: leadingSize.h,
-              fit: BoxFit.cover,
-            ),
-          ),
+          leading: GestureDetector(
+              child: ClipOval(
+                child: Image.asset(
+                  profileImg,
+                  height: leadingSize.h,
+                  width: leadingSize.h,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              onTap: () => Navigator.pushNamed(context, UserProfile.route)),
           title: Row(
             children: [
               Text(
