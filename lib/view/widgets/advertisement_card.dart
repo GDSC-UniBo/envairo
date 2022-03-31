@@ -59,7 +59,7 @@ class AdvertisementCard extends StatelessWidget {
                     minVerticalPadding: 0,
                     minLeadingWidth: 0,
                     leading: ClipOval(
-                      child: Image.network(
+                      child: Image.asset(
                         sellerImage,
                         height: 55.h,
                         width: 55.h,

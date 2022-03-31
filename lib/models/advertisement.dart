@@ -40,7 +40,7 @@ class Advertisement {
               "https://img.myloview.it/adesivi/home-interior-mock-up-with-red-sofa-table-and-decor-in-green-living-room-3d-render-700-238099544.jpg"),
       Advertisement(
           id: 2,
-          seller: users[0],
+          seller: users[8],
           title: "iPhone 5",
           description: "",
           mainImage:
@@ -82,14 +82,14 @@ class Advertisement {
               "https://images.officeworks.com.au/api/2/img/https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/CATS3460BK_.jpg/resize?size=600&auth=MjA5OTcwODkwMg__"),
       Advertisement(
           id: 8,
-          seller: users[4],
+          seller: users[9],
           title: "Broken PC",
           description: "",
           mainImage:
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVn8SzI8Z4N-HQ0qJO4NmA0eArsl2hUPsaQ&usqp=CAU"),
       Advertisement(
           id: 9,
-          seller: users[5],
+          seller: users[0],
           title: "Queen size bed",
           description: "",
           mainImage:

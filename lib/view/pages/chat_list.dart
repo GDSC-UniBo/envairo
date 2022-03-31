@@ -55,7 +55,7 @@ class ChatList extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ListTile(
           leading: ClipOval(
-            child: Image.network(
+            child: Image.asset(
               profileImg,
               height: leadingSize.h,
               width: leadingSize.h,

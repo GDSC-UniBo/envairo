@@ -23,7 +23,7 @@ class Reviews extends StatelessWidget {
               child: Column(
                 children: [
                   ClipOval(
-                    child: Image.network(
+                    child: Image.asset(
                       r.author.picture,
                       height: 75.h,
                       width: 75.h,
