@@ -43,7 +43,7 @@ class Reviews extends StatelessWidget {
                   Align(
                       alignment: Alignment.topRight,
                       child: CustomRatingBar(rating: r.rating)),
-                  Text(r.text ?? "")
+                  Align(alignment: Alignment.topLeft, child: Text(r.text ?? ""))
                 ],
               ))
         ],

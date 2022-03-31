@@ -25,7 +25,6 @@ Future main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -41,6 +40,7 @@ class MyApp extends StatelessWidget {
               title: 'Envairo',
               theme: ThemeData(
                 primaryColor: Color.fromARGB(255, 0, 118, 122),
+                secondaryHeaderColor: Color.fromARGB(255, 107, 205, 165),
                 visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
               initialRoute: LoginOrSignup.route,

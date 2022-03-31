@@ -17,7 +17,7 @@ class ChatList extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
         onPressed: () {
           //TODO
         },

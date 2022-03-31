@@ -65,7 +65,7 @@ class _SignUpFormState extends State<SignUp> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                buttonColor: Theme.of(context).primaryColor,
+                buttonColor: Theme.of(context).secondaryHeaderColor,
                 onTap: onTapSignUp,
               ),
             ),
@@ -101,7 +101,7 @@ class _SignUpFormState extends State<SignUp> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                buttonColor: Theme.of(context).primaryColor,
+                buttonColor: Theme.of(context).secondaryHeaderColor,
                 onTap: onTapSignUpFacebook,
               ),
             ),
@@ -118,7 +118,7 @@ class _SignUpFormState extends State<SignUp> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                buttonColor: Theme.of(context).primaryColor,
+                buttonColor: Theme.of(context).secondaryHeaderColor,
                 onTap: onTapSignUpGoogle,
               ),
             ),
@@ -139,7 +139,8 @@ class _SignUpFormState extends State<SignUp> {
                   ),
                   TextSpan(
                       text: "Terms of Service",
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(
+                          color: Theme.of(context).secondaryHeaderColor),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           onTapTOS();
@@ -175,7 +176,8 @@ class _SignUpFormState extends State<SignUp> {
                   ),
                   TextSpan(
                     text: "Log in",
-                    style: TextStyle(color: Theme.of(context).primaryColor),
+                    style: TextStyle(
+                        color: Theme.of(context).secondaryHeaderColor),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         onTapToLogIn(context);

@@ -5,17 +5,15 @@ class ToggleTab extends StatefulWidget {
   final List<String> labels;
   final List<Widget> children;
 
-  const ToggleTab({
-    Key? key,
-    required this.labels,
-    required this.children
-  }) : super(key: key);
+  const ToggleTab({Key? key, required this.labels, required this.children})
+      : super(key: key);
 
   @override
   _ToggleTabState createState() => _ToggleTabState();
 }
 
-class _ToggleTabState extends State<ToggleTab> with SingleTickerProviderStateMixin{
+class _ToggleTabState extends State<ToggleTab>
+    with SingleTickerProviderStateMixin {
   static const int height = 85;
 
   late TabController _tabController;
@@ -46,26 +44,19 @@ class _ToggleTabState extends State<ToggleTab> with SingleTickerProviderStateMix
                 controller: _tabController,
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(height.h)),
-                    color: Theme.of(context).primaryColor
-                ),
+                    color: Theme.of(context).secondaryHeaderColor),
                 labelColor: Colors.white,
                 labelStyle: Theme.of(context).textTheme.bodyText1,
                 unselectedLabelColor: Colors.grey,
-                tabs: widget.labels.map((e) =>
-                    Tab(text: e)
-                ).toList()
-            ),
-
+                tabs: widget.labels.map((e) => Tab(text: e)).toList()),
           ),
         ),
-
-        SizedBox(height: 25.h,),
-
+        SizedBox(
+          height: 25.h,
+        ),
         Expanded(
-          child: TabBarView(
-              controller: _tabController,
-              children: widget.children
-          ),
+          child:
+              TabBarView(controller: _tabController, children: widget.children),
         ),
       ],
     );

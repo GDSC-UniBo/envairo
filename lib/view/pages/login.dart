@@ -103,7 +103,7 @@ class _LogInFormState extends State<LogIn> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  buttonColor: Theme.of(context).primaryColor,
+                  buttonColor: Theme.of(context).secondaryHeaderColor,
                   onTap: onTapLogInFacebook,
                 ),
               ),
@@ -120,7 +120,7 @@ class _LogInFormState extends State<LogIn> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  buttonColor: Theme.of(context).primaryColor,
+                  buttonColor: Theme.of(context).secondaryHeaderColor,
                   onTap: onTapLogInGoogle,
                 ),
               ),
@@ -143,7 +143,8 @@ class _LogInFormState extends State<LogIn> {
                     ),
                     TextSpan(
                       text: "Sign up",
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(
+                          color: Theme.of(context).secondaryHeaderColor),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           onTapToSignUp(context);

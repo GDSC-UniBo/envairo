@@ -134,9 +134,9 @@ class _ChatViewState extends State<ChatView> {
   }
 
   void _handlePreviewDataFetched(
-      types.TextMessage message,
-      types.PreviewData previewData,
-      ) {
+    types.TextMessage message,
+    types.PreviewData previewData,
+  ) {
     final index = _messages.indexWhere((element) => element.id == message.id);
     final updatedMessage = _messages[index].copyWith(previewData: previewData);
 
@@ -169,7 +169,6 @@ class _ChatViewState extends State<ChatView> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,9 +187,9 @@ class _ChatViewState extends State<ChatView> {
     );
   }
 
-  ChatTheme _getTheme(){
+  ChatTheme _getTheme() {
     return DefaultChatTheme(
-      primaryColor: Theme.of(context).primaryColor,
+      primaryColor: Theme.of(context).secondaryHeaderColor,
       backgroundColor: Colors.white,
       secondaryColor: Theme.of(context).colorScheme.secondary,
     );

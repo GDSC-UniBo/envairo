@@ -34,10 +34,9 @@ class Advertisement {
       Advertisement(
           id: 1,
           seller: users[0],
-          title: "Red couch",
+          title: "Dishwasher",
           description: "",
-          mainImage:
-              "https://img.myloview.it/adesivi/home-interior-mock-up-with-red-sofa-table-and-decor-in-green-living-room-3d-render-700-238099544.jpg"),
+          mainImage: "https://i.imgur.com/H9LR3Bj.jpg"),
       Advertisement(
           id: 2,
           seller: users[8],
@@ -55,45 +54,39 @@ class Advertisement {
       Advertisement(
           id: 4,
           seller: users[4],
-          title: "Wheelchair",
+          title: "White shoes, size 42",
           description: "",
-          mainImage:
-              "https://m.media-amazon.com/images/I/71+wkOufI+L._AC_SL1080_.jpg"),
+          mainImage: "https://i.imgur.com/VPyrXw3.jpg"),
       Advertisement(
           id: 5,
           seller: users[3],
-          title: "Quilt",
+          title: "Vacuum cleaner",
           description: "",
-          mainImage:
-              "https://www.picclickimg.com/d/l400/pict/383714181288_/INDIAN-Handmade-Trapunta-vintage-Kantha-Copriletto-Buttare-Coperta.jpg"),
+          mainImage: "https://i.imgur.com/y3I1uLH.jpg"),
       Advertisement(
           id: 6,
           seller: users[1],
-          title: "Stroller",
+          title: "Wooden table",
           description: "",
-          mainImage:
-              "https://i5.walmartimages.com/asr/9a1a6e22-687f-4b42-9bc9-4ecab825b631_2.65e6ef1a2ed52b0b848eb9c597fc9431.jpeg"),
+          mainImage: "https://i.imgur.com/BpfV3WH.jpg"),
       Advertisement(
           id: 7,
           seller: users[4],
-          title: "Printer",
+          title: "Old couch",
           description: "",
-          mainImage:
-              "https://images.officeworks.com.au/api/2/img/https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/CATS3460BK_.jpg/resize?size=600&auth=MjA5OTcwODkwMg__"),
+          mainImage: "https://i.imgur.com/yoOmSdf.jpg"),
       Advertisement(
           id: 8,
           seller: users[9],
-          title: "Broken PC",
+          title: "Pink office chair",
           description: "",
-          mainImage:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVn8SzI8Z4N-HQ0qJO4NmA0eArsl2hUPsaQ&usqp=CAU"),
+          mainImage: "https://i.imgur.com/2tb88rW.jpg"),
       Advertisement(
           id: 9,
           seller: users[0],
-          title: "Queen size bed",
+          title: "Big closet",
           description: "",
-          mainImage:
-              "https://res.cloudinary.com/castlery/image/upload/w_1800,f_auto,q_auto/v1597221876/marketing/Cross-Market/blog/Buying%20the%20Right%20Bed%20Our%20Starter%20Guide%20to%20Bed%20Sizes%20and%20Styles%20/US/%2BImages/Blog%20Images/Blog_01_UGCQuentin.jpg"),
+          mainImage: "https://i.imgur.com/pCYnCf8.jpg"),
       // Advertisement(id: 10, seller: users[2], title: "", description: "", mainImage: ""),
       // Advertisement(id: 11, seller: users[0], title: "", description: "", mainImage: ""),
       // Advertisement(id: 12, seller: users[0], title: "", description: "", mainImage: ""),

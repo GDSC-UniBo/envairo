@@ -77,7 +77,7 @@ class Profile extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: Icon(Icons.location_pin)),
-                  Text("Soundsvall, Sweden")
+                  Text("Bologna, Italy")
                 ],
               ),
               Row(
@@ -97,13 +97,13 @@ class Profile extends StatelessWidget {
                             child: Text(
                               "Message",
                               style: TextStyle(
-                                color: Theme.of(context).primaryColor,
+                                color: Theme.of(context).secondaryHeaderColor,
                                 fontSize: 20,
                                 decoration: TextDecoration.none,
                               ),
                             ),
                             buttonColor: Colors.white,
-                            borderColor: Theme.of(context).primaryColor,
+                            borderColor: Theme.of(context).secondaryHeaderColor,
                             onTap: () => {},
                           ),
                           const SizedBox(width: 20),
@@ -116,7 +116,7 @@ class Profile extends StatelessWidget {
                                 decoration: TextDecoration.none,
                               ),
                             ),
-                            buttonColor: Theme.of(context).primaryColor,
+                            buttonColor: Theme.of(context).secondaryHeaderColor,
                             onTap: () => {},
                           ),
                         ],
