@@ -23,25 +23,32 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 75.h, left: 25.w, right: 25.w),
-        child: Column(children: [
-          Row(children: [
-            IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
-            ),
-          ]),
-          Expanded(
-            child: ToggleTab(labels: labels, children: [
-              Profile(
-                user: user,
+        child: Column(
+            children: [
+              Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ]
               ),
-              Reviews(
-                  reviews: reviews
-                      .where((Review element) => element.target == user)
-                      .toList()),
-            ]),
-          ),
-        ]),
+              Expanded(
+                child: ToggleTab(
+                    labels: labels,
+                    children: [
+                      Profile(user: user),
+
+                      Reviews(
+                          reviews: reviews
+                              .where((Review element) => element.target == user)
+                              .toList()
+                      ),
+                    ]
+                ),
+              ),
+            ]
+        ),
       ),
     );
   }

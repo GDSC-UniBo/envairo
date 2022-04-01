@@ -33,7 +33,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[8]
+            arguments: Item.generatePlaceholders()[8]
         ),
       ),
       Marker(
@@ -42,7 +42,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[7]
+            arguments: Item.generatePlaceholders()[7]
         ),
       ),
       Marker(
@@ -51,7 +51,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement(
+            arguments: Item(
                 id: 6,
                 seller: User.generatePlaceholders()[1],
                 title: "Tennis chair",
@@ -66,7 +66,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[5]
+            arguments: Item.generatePlaceholders()[5]
         ),
       ),
       Marker(
@@ -75,7 +75,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[4]
+            arguments: Item.generatePlaceholders()[4]
         ),
       ),
       Marker(
@@ -84,7 +84,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[3]
+            arguments: Item.generatePlaceholders()[3]
         ),
       ),
       Marker(
@@ -93,7 +93,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[2]
+            arguments: Item.generatePlaceholders()[2]
         ),
       ),
       Marker(
@@ -102,7 +102,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[0]
+            arguments: Item.generatePlaceholders()[0]
         ),
       ),
       Marker(
@@ -111,7 +111,7 @@ class _SearchPageState extends State<SearchPage> {
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
             AdvertisementDetails.route,
-            arguments: Advertisement.generatePlaceholders()[1]
+            arguments: Item.generatePlaceholders()[1]
         ),
       ),
     };

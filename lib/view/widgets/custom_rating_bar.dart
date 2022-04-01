@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomRatingBar extends StatelessWidget {
   final double rating;
@@ -23,9 +22,7 @@ class CustomRatingBar extends StatelessWidget {
         half: Image.asset('assets/images/review_icons/heart_half.png'),
         empty: Image.asset('assets/images/review_icons/heart_border.png'),
       ),
-      onRatingUpdate: (rating) {
-        print(rating);
-      },
+      onRatingUpdate: (rating) {},
     );
   }
 }

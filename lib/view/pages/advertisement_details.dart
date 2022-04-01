@@ -11,7 +11,7 @@ import 'chat_view.dart';
 class AdvertisementDetails extends StatelessWidget {
   static const String route = '/adv-details';
 
-  final Advertisement advertisement;
+  final Item advertisement;
 
   const AdvertisementDetails({Key? key, required this.advertisement}) : super(key: key);
 

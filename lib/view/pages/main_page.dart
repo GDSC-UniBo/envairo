@@ -1,9 +1,7 @@
 import 'package:envairo/view/pages/my_profile.dart';
-import 'package:envairo/view/pages/new_advertisement.dart';
+import 'package:envairo/view/pages/new_item.dart';
 import 'package:envairo/view/pages/search_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'home.dart';
 import 'messages.dart';
 
@@ -34,7 +32,7 @@ class _MainPageState extends State<MainPage> {
       icon: const Icon(Icons.add_circle_outline),
       selectedIcon: const Icon(Icons.add_circle),
       label: "New",
-      page: const NewAdvertisement(),
+      page: const NewItem(),
     ),
     MenuOption(
       icon: const Icon(Icons.mail_outline),
@@ -46,7 +44,7 @@ class _MainPageState extends State<MainPage> {
       icon: const Icon(Icons.person_outline),
       selectedIcon: const Icon(Icons.person),
       label: "Profile",
-      page: const MyProfile(),
+      page: MyProfile(),
     ),
   ];
 
@@ -65,14 +63,14 @@ class _MainPageState extends State<MainPage> {
         child: _widgetOptions.elementAt(_selectedIndex).page,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: List<BottomNavigationBarItem>.generate(
-            _widgetOptions.length,
-            (index) => BottomNavigationBarItem(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  activeIcon: _widgetOptions[index].selectedIcon,
-                  icon: _widgetOptions[index].icon,
-                  label: _widgetOptions[index].label,
-                )),
+        items: List<BottomNavigationBarItem>.generate(_widgetOptions.length,
+                (index) => BottomNavigationBarItem(
+              backgroundColor: Theme.of(context).primaryColor,
+              activeIcon: _widgetOptions[index].selectedIcon,
+              icon: _widgetOptions[index].icon,
+              label: _widgetOptions[index].label,
+            )
+        ),
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
@@ -85,9 +83,10 @@ class MenuOption {
   final String label;
   final Widget page;
 
-  MenuOption(
-      {required this.icon,
-      required this.selectedIcon,
-      required this.label,
-      required this.page});
+  MenuOption({
+    required this.icon,
+    required this.selectedIcon,
+    required this.label,
+    required this.page
+  });
 }

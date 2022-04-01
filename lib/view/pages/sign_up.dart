@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../router.dart';
 import 'login.dart';
 import 'main_page.dart';
 
@@ -18,7 +17,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUp> {
-  final fullnameController = TextEditingController();
+  final fullNameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -40,7 +39,7 @@ class _SignUpFormState extends State<SignUp> {
           MyTextBox(
             hintText: "Full name",
             keyboardType: TextInputType.name,
-            controller: fullnameController,
+            controller: fullNameController,
           ),
           MyTextBox(
             hintText: "Email",
@@ -70,25 +69,29 @@ class _SignUpFormState extends State<SignUp> {
               ),
             ),
           ),
-          Row(children: const [
-            Expanded(
-                child: Divider(
-              thickness: 1,
-              color: Colors.black,
-              indent: 50,
-              endIndent: 20,
-              height: 40,
-            )),
-            Text("or"),
-            Expanded(
-                child: Divider(
-              thickness: 1,
-              color: Colors.black,
-              indent: 20,
-              endIndent: 50,
-              height: 40,
-            )),
-          ]),
+          Row(
+              children: const [
+                Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.black,
+                      indent: 50,
+                      endIndent: 20,
+                      height: 40,
+                    )
+                ),
+                Text("or"),
+                Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.black,
+                      indent: 20,
+                      endIndent: 50,
+                      height: 40,
+                    )
+                ),
+              ]
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: SizedBox(
@@ -113,8 +116,7 @@ class _SignUpFormState extends State<SignUp> {
               child: RoundButton(
                 child: const Align(
                   alignment: Alignment.center,
-                  child: Text(
-                    "Sign up with Google",
+                  child: Text("Sign up with Google",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
@@ -139,12 +141,9 @@ class _SignUpFormState extends State<SignUp> {
                   ),
                   TextSpan(
                       text: "Terms of Service",
-                      style: TextStyle(
-                          color: Theme.of(context).secondaryHeaderColor),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          onTapTOS();
-                        }),
+                      style: TextStyle(color: Theme.of(context).secondaryHeaderColor),
+                      recognizer: TapGestureRecognizer()..onTap = onTapTOS
+                  ),
                   const TextSpan(
                     text: " and ",
                     style: TextStyle(color: Colors.black),
@@ -152,10 +151,7 @@ class _SignUpFormState extends State<SignUp> {
                   TextSpan(
                     text: "Privacy Policy",
                     style: TextStyle(color: Theme.of(context).primaryColor),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        onTapPP();
-                      },
+                    recognizer: TapGestureRecognizer()..onTap = onTapPP,
                   ),
                 ],
               ),
@@ -194,18 +190,18 @@ class _SignUpFormState extends State<SignUp> {
 
   Future onTapSignUp() async {
     if (kDebugMode) {
-      String fullName = fullnameController.text;
+      String fullName = fullNameController.text;
       String email = emailController.text;
-      String pasword = passwordController.text;
-      print("SIGNUP_TEST $fullName $email $pasword");
+      String password = passwordController.text;
+      print("SIGNUP_TEST $fullName $email $password");
     }
 
-    if (fullnameController.text.isNotEmpty) {
+    if (fullNameController.text.isNotEmpty) {
       AuthenticationHelper()
           .signUp(
-              email: emailController.text,
-              password: passwordController.text,
-              fullName: fullnameController.text)
+          email: emailController.text,
+          password: passwordController.text,
+          fullName: fullNameController.text)
           .then((result) {
         if (result == null) {
           if (kDebugMode) {
@@ -222,9 +218,11 @@ class _SignUpFormState extends State<SignUp> {
               result,
               style: const TextStyle(fontSize: 16),
             ),
-          ));
+          )
+          );
         }
-      });
+      }
+      );
     }
   }
 
@@ -244,17 +242,7 @@ class _SignUpFormState extends State<SignUp> {
     //TODO
   }
 
-  void openMainPage(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: MainPage.route)),
-    );
-  }
+  void openMainPage(context) => Navigator.pushReplacementNamed(context, MainPage.route);
 
-  void onTapToLogIn(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: LogIn.route)),
-    );
-  }
+  void onTapToLogIn(context) => Navigator.pushReplacementNamed(context, LogIn.route);
 }

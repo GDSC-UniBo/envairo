@@ -13,27 +13,22 @@ class LoginOrSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("LogInOrSignUp build methos called");
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 50,
-            ),
-            const SizedBox(
-              height: 80,
-            ),
-            Image.asset(
-              "assets/images/logo.png",
+            const SizedBox(height: 50),
+            const SizedBox(height: 80),
+
+            Image.asset("assets/images/logo.png",
               height: 250.h,
               width: 600.h,
             ),
-            const SizedBox(
-              height: 100,
-            ),
+
+            const SizedBox(height: 100,),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -41,8 +36,7 @@ class LoginOrSignup extends StatelessWidget {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "Sign up",
+                    child: Text("Sign up",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -55,6 +49,7 @@ class LoginOrSignup extends StatelessWidget {
                 ),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -62,8 +57,7 @@ class LoginOrSignup extends StatelessWidget {
                 child: RoundButton(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "Log in",
+                    child: Text("Log in",
                       style: TextStyle(
                         color: Theme.of(context).secondaryHeaderColor,
                         fontSize: 20,
@@ -83,17 +77,7 @@ class LoginOrSignup extends StatelessWidget {
     );
   }
 
-  void onTapSignUp(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: SignUp.route)),
-    );
-  }
+  void onTapSignUp(context) => Navigator.pushReplacementNamed(context, SignUp.route);
 
-  void onTapLogIn(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: LogIn.route)),
-    );
-  }
+  void onTapLogIn(context) => Navigator.pushReplacementNamed(context,  LogIn.route);
 }

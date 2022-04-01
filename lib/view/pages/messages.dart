@@ -12,11 +12,11 @@ class Messages extends StatelessWidget{
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 75.h, left: 10.w, right: 10.w),
-      child: const ToggleTab(
+      child: ToggleTab(
           labels: labels,
           children: [
             ChatList(),
-            NotificationList(),
+            const NotificationList(),
           ]
       ),
     );

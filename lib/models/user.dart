@@ -9,27 +9,28 @@ class User {
   final String username, name;
   final String? surname;
   final String picture;
-  final double? reputation;
-  final int? reviewCount;
+  final double reputation;
+  final int reviewCount;
 
   final Position? position;
 
-  const User(
-      {required this.email,
-      required this.username,
-      required this.name,
-      this.picture = User.defaultPicture,
-      this.surname,
-      this.position,
-      this.reputation,
-      this.reviewCount});
+  const User({
+    required this.email,
+    required this.username,
+    required this.name,
+    this.picture = User.defaultPicture,
+    this.surname,
+    this.position,
+    this.reputation = 0,
+    this.reviewCount = 0,
+  });
 
   static List<User> generateFake(int number) {
     return List<int>.generate(number, (i) => i + 1)
         .map((int i) => User(
-            email: faker.internet.email(),
-            username: faker.internet.userName(),
-            name: faker.person.name(),
+      email: faker.internet.email(),
+      username: faker.internet.userName(),
+      name: faker.person.name(),
     ))
         .toList();
   }

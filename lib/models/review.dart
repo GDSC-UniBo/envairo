@@ -6,11 +6,12 @@ class Review {
   final User author;
   final String? text;
 
-  const Review(
-      {required this.target,
-      required this.author,
-      required this.rating,
-      this.text});
+  const Review({
+    required this.target,
+    required this.author,
+    required this.rating,
+    this.text
+  });
 
   static List<Review> generatePlaceholders() {
     List<User> users = User.generatePlaceholders();
@@ -70,6 +71,7 @@ class Review {
         target: json["target"],
         author: json["author"],
         rating: json["rating"],
-        text: json["text"]);
+        text: json["text"]
+    );
   }
 }

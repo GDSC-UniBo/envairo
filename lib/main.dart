@@ -1,11 +1,15 @@
+import 'package:envairo/repositories/item_repository.dart';
+import 'package:envairo/repositories/user_repository.dart';
 import 'package:envairo/router.dart';
 import 'package:envairo/view/pages/login_or_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'firebase_options.dart';
 
-import 'package:firebase_core/firebase_core.dart'; // new
-import 'firebase_options.dart'; // new
 
 Future main() async {
   final stopwatch = Stopwatch();
@@ -20,7 +24,14 @@ Future main() async {
   );
   print("stopwatch Firebase.initializeApp ${stopwatch.elapsed}");
 
-  runApp(const MyApp());
+  runApp(MultiProvider(
+      providers: [
+        RepositoryProvider(create: (context) => ItemRepository()),
+        RepositoryProvider(create: (context) => UserRepository()),
+      ],
+      child: const MyApp()
+  )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -37,16 +48,17 @@ class MyApp extends StatelessWidget {
           designSize: const Size(750, 1334),
           builder: () {
             return MaterialApp(
-              title: 'Envairo',
+              title: 'FreebBye',
               theme: ThemeData(
-                primaryColor: Color.fromARGB(255, 0, 118, 122),
-                secondaryHeaderColor: Color.fromARGB(255, 107, 205, 165),
+                primaryColor: const Color.fromARGB(255, 0, 118, 122),
+                secondaryHeaderColor: const Color.fromARGB(255, 107, 205, 165),
                 visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
               initialRoute: LoginOrSignup.route,
               onGenerateRoute: RouteGenerator().generateRoute,
             );
-          }),
+          }
+          ),
     );
   }
 }

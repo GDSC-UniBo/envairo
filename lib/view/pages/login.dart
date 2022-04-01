@@ -34,27 +34,28 @@ class _LogInFormState extends State<LogIn> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 70,
-            ),
-            Image.asset(
-              "assets/images/logo.png",
+
+            const SizedBox(height: 70),
+
+            Image.asset("assets/images/logo.png",
               scale: 1.5,
             ),
-            const SizedBox(
-              height: 10,
-            ),
+
+            const SizedBox(height: 10),
+
             MyTextBox(
               hintText: "Email",
               keyboardType: TextInputType.emailAddress,
               controller: emailController,
             ),
+
             MyTextBox(
               hintText: "Password",
               obscureText: true,
               keyboardType: TextInputType.visiblePassword,
               controller: passwordController,
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -62,8 +63,7 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "Log in",
+                    child: Text("Log in",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -72,25 +72,31 @@ class _LogInFormState extends State<LogIn> {
                 ),
               ),
             ),
-            Row(children: const [
-              Expanded(
-                  child: Divider(
-                thickness: 1,
-                color: Colors.black,
-                indent: 50,
-                endIndent: 20,
-                height: 40,
-              )),
-              Text("or"),
-              Expanded(
-                  child: Divider(
-                thickness: 1,
-                color: Colors.black,
-                indent: 20,
-                endIndent: 50,
-                height: 40,
-              )),
-            ]),
+
+            Row(
+                children: const [
+                  Expanded(
+                      child: Divider(
+                        thickness: 1,
+                        color: Colors.black,
+                        indent: 50,
+                        endIndent: 20,
+                        height: 40,
+                      )
+                  ),
+                  Text("or"),
+
+                  Expanded(
+                      child: Divider(
+                        thickness: 1,
+                        color: Colors.black,
+                        indent: 20,
+                        endIndent: 50,
+                        height: 40,
+                      )
+                  ),
+                ]
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -98,8 +104,7 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "Log in with Facebook",
+                    child: Text("Log in with Facebook",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -115,8 +120,7 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "Log in with Google",
+                    child: Text("Log in with Google",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -125,12 +129,9 @@ class _LogInFormState extends State<LogIn> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
+
+            const SizedBox(height: 30),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: RichText(
@@ -181,25 +182,12 @@ class _LogInFormState extends State<LogIn> {
     });
   }
 
-  void onTapLogInFacebook() {
-    openMainPage(context);
-  }
+  void onTapLogInFacebook() => openMainPage(context);
 
-  void onTapLogInGoogle() {
-    openMainPage(context);
-  }
+  void onTapLogInGoogle() => openMainPage(context);
 
-  void openMainPage(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: MainPage.route)),
-    );
-  }
+  void openMainPage(context) => Navigator.pushReplacementNamed(context, MainPage.route);
 
-  void onTapToSignUp(context) {
-    Navigator.pushReplacement(
-      context,
-      RouteGenerator().generateRoute(const RouteSettings(name: SignUp.route)),
-    );
-  }
+  void onTapToSignUp(context) => Navigator.pushReplacementNamed(context, SignUp.route);
+
 }
