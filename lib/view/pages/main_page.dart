@@ -63,6 +63,7 @@ class _MainPageState extends State<MainPage> {
         child: _widgetOptions.elementAt(_selectedIndex).page,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: List<BottomNavigationBarItem>.generate(_widgetOptions.length,
                 (index) => BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
