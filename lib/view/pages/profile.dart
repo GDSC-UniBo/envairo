@@ -121,7 +121,7 @@ class Profile extends StatelessWidget {
 
 
           ItemGrid(
-            items: RepositoryProvider.of<ItemRepository>(context).getUserItems(user),
+            items: RepositoryProvider.of<ItemRepository>(context).getUserItems(user) as List<Item>,
             physics: const NeverScrollableScrollPhysics(),
           ),
         ],
