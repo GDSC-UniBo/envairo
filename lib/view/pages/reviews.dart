@@ -14,18 +14,23 @@ class Reviews extends StatelessWidget {
       return const Text("This user has no reviews.");
     }
     else {
-      return ListView.builder(
-          itemBuilder: (context, index){
-            return Column(
-              children: [
-                _reviewLine(context, reviews[index]),
+      return MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: ListView.builder(
+          itemCount: reviews.length,
+            itemBuilder: (context, index){
+              return Column(
+                children: [
+                  _reviewLine(context, reviews[index]),
 
-                const Divider(
-                  thickness: 0.8,
-                ),
-              ],
-            );
-          }
+                  const Divider(
+                    thickness: 0.8,
+                  ),
+                ],
+              );
+            }
+        ),
       );
 
     }
@@ -34,21 +39,26 @@ class Reviews extends StatelessWidget {
   Widget _reviewLine(BuildContext context, Review review){
     return Row(
       children: [
-        Expanded(
-          flex: 3,
-          child: Column(
-            children: [
-              ClipOval(
-                child: Image.asset(review.author.picture,
-                  height: 75.h,
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+          child: Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                Container(
                   width: 75.h,
-                  fit: BoxFit.cover,
+                  height: 75.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        fit: BoxFit.fill, image: Image.asset(review.author.picture).image),
+                  ),
                 ),
-              ),
-              Text(review.author.name,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
+                Text(review.author.name,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
           ),
         ),
         Expanded(
@@ -60,9 +70,12 @@ class Reviews extends StatelessWidget {
                   child: CustomRatingBar(
                       rating: review.rating)
               ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(review.text ?? ""),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(review.text ?? ""),
+                ),
               ),
             ],
           ),
