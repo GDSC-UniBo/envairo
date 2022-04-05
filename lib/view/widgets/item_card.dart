@@ -62,8 +62,8 @@ class ItemCard extends StatelessWidget {
                         leading: ClipOval(
                           child: Image.asset(
                             item.seller.picture,
-                            height: 45.h,
-                            width: 45.h,
+                            height: 40.h,
+                            width: 40.h,
                             fit: BoxFit.cover,
                           ),
                         ),
