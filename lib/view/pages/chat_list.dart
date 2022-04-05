@@ -26,6 +26,7 @@ class ChatList extends StatelessWidget {
         removeTop: true,
         context: context,
         child: ListView.builder(
+          itemCount: interestingItems.length,
           itemBuilder: (BuildContext context, int index) {
             return _chatRow(
               context,
