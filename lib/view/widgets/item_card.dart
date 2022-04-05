@@ -41,12 +41,15 @@ class ItemCard extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 5.h, horizontal: 30.w),
+                        padding: EdgeInsets.only(top: 5.h, left: 30.w, right:30.w),
                         width: double.maxFinite,
                         child: Text(
                           item.title,
-                          style: Theme.of(context).textTheme.subtitle2,
+                          style: TextStyle(
+                            color: const Color.fromRGBO(61, 61, 61, 1),
+                            fontFamily: "Shapiro",
+                            fontSize: 30.sp,
+                          ),
                           textAlign: TextAlign.left,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
