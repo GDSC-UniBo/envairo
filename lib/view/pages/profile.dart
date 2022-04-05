@@ -116,7 +116,7 @@ class Profile extends StatelessWidget {
                 RepositoryProvider.of<ItemRepository>(context)
                         .countUserItems(user)
                         .toString() +
-                    " advertisments",
+                    " advertisements",
                 style:
                     const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
