@@ -1,5 +1,5 @@
-name: envairo
-description: Envairo is an app to help the circular economy and avoid waste.
+name: freebye
+description: FreeBye is an app to incentivize circular economy and waste reduction.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
