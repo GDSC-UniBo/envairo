@@ -26,7 +26,7 @@ class LoginOrSignup extends StatelessWidget {
               width: 600.h,
             ),
             const SizedBox(
-              height: 100,
+              height: 180,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
