@@ -188,9 +188,9 @@ class _ChatViewState extends State<ChatView> {
 
   ChatTheme _getTheme() {
     return DefaultChatTheme(
-      primaryColor: Theme.of(context).secondaryHeaderColor,
+      primaryColor: Color.fromARGB(255, 252, 249, 244),
       backgroundColor: Colors.white,
-      secondaryColor: Theme.of(context).primaryColor,
+      secondaryColor: Color.fromARGB(255, 240, 251, 247),
     );
   }
 }
