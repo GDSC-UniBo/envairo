@@ -66,7 +66,11 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
         fixedColor: Theme.of(context).bottomAppBarColor,
+        unselectedItemColor: Theme.of(context).bottomAppBarColor,
         type: BottomNavigationBarType.fixed,
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        iconSize: 27,
         items: List<BottomNavigationBarItem>.generate(
             _widgetOptions.length,
             (index) => BottomNavigationBarItem(
