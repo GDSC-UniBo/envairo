@@ -1,10 +1,10 @@
-import 'package:envairo/src/authentication.dart';
-import 'package:envairo/view/widgets/round_button.dart';
-import 'package:envairo/view/widgets/textbox.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../../src/authentication.dart';
+import '../widgets/round_button.dart';
+import '../widgets/textbox.dart';
 import 'login.dart';
 import 'main_page.dart';
 
@@ -69,29 +69,25 @@ class _SignUpFormState extends State<SignUp> {
               ),
             ),
           ),
-          Row(
-              children: const [
-                Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                      indent: 50,
-                      endIndent: 20,
-                      height: 40,
-                    )
-                ),
-                Text("or"),
-                Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                      indent: 20,
-                      endIndent: 50,
-                      height: 40,
-                    )
-                ),
-              ]
-          ),
+          Row(children: const [
+            Expanded(
+                child: Divider(
+              thickness: 1,
+              color: Colors.black,
+              indent: 50,
+              endIndent: 20,
+              height: 40,
+            )),
+            Text("or"),
+            Expanded(
+                child: Divider(
+              thickness: 1,
+              color: Colors.black,
+              indent: 20,
+              endIndent: 50,
+              height: 40,
+            )),
+          ]),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: SizedBox(
@@ -116,7 +112,8 @@ class _SignUpFormState extends State<SignUp> {
               child: RoundButton(
                 child: const Align(
                   alignment: Alignment.center,
-                  child: Text("Sign up with Google",
+                  child: Text(
+                    "Sign up with Google",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
@@ -141,9 +138,9 @@ class _SignUpFormState extends State<SignUp> {
                   ),
                   TextSpan(
                       text: "Terms of Service",
-                      style: TextStyle(color: Theme.of(context).secondaryHeaderColor),
-                      recognizer: TapGestureRecognizer()..onTap = onTapTOS
-                  ),
+                      style: TextStyle(
+                          color: Theme.of(context).secondaryHeaderColor),
+                      recognizer: TapGestureRecognizer()..onTap = onTapTOS),
                   const TextSpan(
                     text: " and ",
                     style: TextStyle(color: Colors.black),
@@ -199,9 +196,9 @@ class _SignUpFormState extends State<SignUp> {
     if (fullNameController.text.isNotEmpty) {
       AuthenticationHelper()
           .signUp(
-          email: emailController.text,
-          password: passwordController.text,
-          fullName: fullNameController.text)
+              email: emailController.text,
+              password: passwordController.text,
+              fullName: fullNameController.text)
           .then((result) {
         if (result == null) {
           if (kDebugMode) {
@@ -218,11 +215,9 @@ class _SignUpFormState extends State<SignUp> {
               result,
               style: const TextStyle(fontSize: 16),
             ),
-          )
-          );
+          ));
         }
-      }
-      );
+      });
     }
   }
 
@@ -242,7 +237,9 @@ class _SignUpFormState extends State<SignUp> {
     //TODO
   }
 
-  void openMainPage(context) => Navigator.pushReplacementNamed(context, MainPage.route);
+  void openMainPage(context) =>
+      Navigator.pushReplacementNamed(context, MainPage.route);
 
-  void onTapToLogIn(context) => Navigator.pushReplacementNamed(context, LogIn.route);
+  void onTapToLogIn(context) =>
+      Navigator.pushReplacementNamed(context, LogIn.route);
 }

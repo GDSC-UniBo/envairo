@@ -54,7 +54,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '672882184534',
     projectId: 'envairo-1ffd9',
     storageBucket: 'envairo-1ffd9.appspot.com',
-    iosClientId: '672882184534-urq904crgsmc66330jhqf3rmpemlg8mh.apps.googleusercontent.com',
+    iosClientId:
+        '672882184534-urq904crgsmc66330jhqf3rmpemlg8mh.apps.googleusercontent.com',
     iosBundleId: 'com.google.developers.envairo.envairo',
   );
 }

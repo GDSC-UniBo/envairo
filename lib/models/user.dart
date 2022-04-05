@@ -1,5 +1,5 @@
-import 'package:envairo/models/position.dart';
 import 'package:faker/faker.dart';
+import 'package:freebye/models/position.dart';
 
 class User {
   static const String defaultPicture =
@@ -28,10 +28,10 @@ class User {
   static List<User> generateFake(int number) {
     return List<int>.generate(number, (i) => i + 1)
         .map((int i) => User(
-      email: faker.internet.email(),
-      username: faker.internet.userName(),
-      name: faker.person.name(),
-    ))
+              email: faker.internet.email(),
+              username: faker.internet.userName(),
+              name: faker.person.name(),
+            ))
         .toList();
   }
 

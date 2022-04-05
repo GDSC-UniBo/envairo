@@ -8,9 +8,6 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: child)
-    );
+        child: Padding(padding: const EdgeInsets.all(10), child: child));
   }
 }

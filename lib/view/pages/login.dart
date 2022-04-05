@@ -1,13 +1,12 @@
-import 'package:envairo/router.dart';
-import 'package:envairo/view/pages/main_page.dart';
-import 'package:envairo/view/pages/sign_up.dart';
-import 'package:envairo/view/widgets/round_button.dart';
-import 'package:envairo/view/widgets/textbox.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:freebye/view/pages/sign_up.dart';
+import 'package:freebye/view/widgets/round_button.dart';
+import 'package:freebye/view/widgets/textbox.dart';
 
 import '../../src/authentication.dart';
+import 'main_page.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);
@@ -34,28 +33,23 @@ class _LogInFormState extends State<LogIn> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             const SizedBox(height: 70),
-
-            Image.asset("assets/images/logo.png",
+            Image.asset(
+              "assets/images/logo.png",
               scale: 1.5,
             ),
-
             const SizedBox(height: 10),
-
             MyTextBox(
               hintText: "Email",
               keyboardType: TextInputType.emailAddress,
               controller: emailController,
             ),
-
             MyTextBox(
               hintText: "Password",
               obscureText: true,
               keyboardType: TextInputType.visiblePassword,
               controller: passwordController,
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -63,7 +57,8 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text("Log in",
+                    child: Text(
+                      "Log in",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -72,31 +67,25 @@ class _LogInFormState extends State<LogIn> {
                 ),
               ),
             ),
-
-            Row(
-                children: const [
-                  Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: Colors.black,
-                        indent: 50,
-                        endIndent: 20,
-                        height: 40,
-                      )
-                  ),
-                  Text("or"),
-
-                  Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: Colors.black,
-                        indent: 20,
-                        endIndent: 50,
-                        height: 40,
-                      )
-                  ),
-                ]
-            ),
+            Row(children: const [
+              Expanded(
+                  child: Divider(
+                thickness: 1,
+                color: Colors.black,
+                indent: 50,
+                endIndent: 20,
+                height: 40,
+              )),
+              Text("or"),
+              Expanded(
+                  child: Divider(
+                thickness: 1,
+                color: Colors.black,
+                indent: 20,
+                endIndent: 50,
+                height: 40,
+              )),
+            ]),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -104,7 +93,8 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text("Log in with Facebook",
+                    child: Text(
+                      "Log in with Facebook",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -120,7 +110,8 @@ class _LogInFormState extends State<LogIn> {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text("Log in with Google",
+                    child: Text(
+                      "Log in with Google",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -129,9 +120,7 @@ class _LogInFormState extends State<LogIn> {
                 ),
               ),
             ),
-
             const SizedBox(height: 30),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: RichText(
@@ -186,8 +175,9 @@ class _LogInFormState extends State<LogIn> {
 
   void onTapLogInGoogle() => openMainPage(context);
 
-  void openMainPage(context) => Navigator.pushReplacementNamed(context, MainPage.route);
+  void openMainPage(context) =>
+      Navigator.pushReplacementNamed(context, MainPage.route);
 
-  void onTapToSignUp(context) => Navigator.pushReplacementNamed(context, SignUp.route);
-
+  void onTapToSignUp(context) =>
+      Navigator.pushReplacementNamed(context, SignUp.route);
 }

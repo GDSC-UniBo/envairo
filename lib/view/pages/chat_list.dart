@@ -1,8 +1,9 @@
-import 'package:envairo/models/advertisement.dart';
-import 'package:envairo/view/pages/chat_view.dart';
-import 'package:envairo/view/pages/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freebye/view/pages/chat_view.dart';
+import 'package:freebye/view/pages/user_profile.dart';
+
+import '../../models/advertisement.dart';
 
 class ChatList extends StatelessWidget {
   static const double leadingSize = 95;
@@ -93,7 +94,8 @@ class ChatList extends StatelessWidget {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.only(top: 8.0, left: 4.0, right: 4.0, bottom: 0.0),
+          padding:
+              EdgeInsets.only(top: 8.0, left: 4.0, right: 4.0, bottom: 0.0),
           child: Divider(
             thickness: 0.8,
             height: 0.1,

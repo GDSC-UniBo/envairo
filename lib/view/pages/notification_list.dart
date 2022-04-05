@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class NotificationList extends StatelessWidget{
+class NotificationList extends StatelessWidget {
   const NotificationList({Key? key}) : super(key: key);
 
   @override
@@ -9,5 +9,4 @@ class NotificationList extends StatelessWidget{
     // TODO: implement build
     throw UnimplementedError();
   }
-
 }

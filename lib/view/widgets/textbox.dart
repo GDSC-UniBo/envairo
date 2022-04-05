@@ -11,17 +11,17 @@ class MyTextBox extends StatelessWidget {
   final TextEditingController? controller;
   final int? maxLines;
 
-  const MyTextBox({
-    Key? key,
-    this.hintText,
-    this.onSubmitted,
-    this.onChange,
-    this.keyboardType,
-    this.obscureText = false,
-    this.textAlign = TextAlign.left,
-    this.controller,
-    this.maxLines = 1
-  }) : super(key: key);
+  const MyTextBox(
+      {Key? key,
+      this.hintText,
+      this.onSubmitted,
+      this.onChange,
+      this.keyboardType,
+      this.obscureText = false,
+      this.textAlign = TextAlign.left,
+      this.controller,
+      this.maxLines = 1})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

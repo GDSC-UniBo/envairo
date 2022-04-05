@@ -1,9 +1,10 @@
-import 'package:envairo/view/pages/my_profile.dart';
-import 'package:envairo/view/pages/new_item.dart';
-import 'package:envairo/view/pages/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:freebye/view/pages/search_page.dart';
+
 import 'home.dart';
 import 'messages.dart';
+import 'my_profile.dart';
+import 'new_item.dart';
 
 class MainPage extends StatefulWidget {
   static const String route = '/mainpage';
@@ -63,15 +64,17 @@ class _MainPageState extends State<MainPage> {
         child: _widgetOptions.elementAt(_selectedIndex).page,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        fixedColor: Theme.of(context).bottomAppBarColor,
         type: BottomNavigationBarType.fixed,
-        items: List<BottomNavigationBarItem>.generate(_widgetOptions.length,
-                (index) => BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).primaryColor,
-              activeIcon: _widgetOptions[index].selectedIcon,
-              icon: _widgetOptions[index].icon,
-              label: _widgetOptions[index].label,
-            )
-        ),
+        items: List<BottomNavigationBarItem>.generate(
+            _widgetOptions.length,
+            (index) => BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  activeIcon: _widgetOptions[index].selectedIcon,
+                  icon: _widgetOptions[index].icon,
+                  label: _widgetOptions[index].label,
+                )),
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
@@ -84,10 +87,9 @@ class MenuOption {
   final String label;
   final Widget page;
 
-  MenuOption({
-    required this.icon,
-    required this.selectedIcon,
-    required this.label,
-    required this.page
-  });
+  MenuOption(
+      {required this.icon,
+      required this.selectedIcon,
+      required this.label,
+      required this.page});
 }

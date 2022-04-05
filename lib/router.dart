@@ -1,11 +1,11 @@
-import 'package:envairo/view/pages/item_details.dart';
-import 'package:envairo/view/pages/chat_view.dart';
-import 'package:envairo/view/pages/login.dart';
-import 'package:envairo/view/pages/login_or_signup.dart';
-import 'package:envairo/view/pages/main_page.dart';
-import 'package:envairo/view/pages/sign_up.dart';
-import 'package:envairo/view/pages/user_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:freebye/view/pages/chat_view.dart';
+import 'package:freebye/view/pages/item_details.dart';
+import 'package:freebye/view/pages/login.dart';
+import 'package:freebye/view/pages/login_or_signup.dart';
+import 'package:freebye/view/pages/main_page.dart';
+import 'package:freebye/view/pages/sign_up.dart';
+import 'package:freebye/view/pages/user_profile.dart';
 
 class RouteGenerator {
   RouteGenerator();

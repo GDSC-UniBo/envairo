@@ -1,10 +1,9 @@
-import 'package:envairo/view/pages/login.dart';
-import 'package:envairo/view/pages/sign_up.dart';
-import 'package:envairo/view/widgets/round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freebye/view/pages/sign_up.dart';
 
-import '../../router.dart';
+import '../widgets/round_button.dart';
+import 'login.dart';
 
 class LoginOrSignup extends StatelessWidget {
   static const String route = '/';
@@ -21,14 +20,14 @@ class LoginOrSignup extends StatelessWidget {
           children: [
             const SizedBox(height: 50),
             const SizedBox(height: 80),
-
-            Image.asset("assets/images/logo.png",
+            Image.asset(
+              "assets/images/logo.png",
               height: 250.h,
               width: 600.h,
             ),
-
-            const SizedBox(height: 100,),
-
+            const SizedBox(
+              height: 100,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -36,7 +35,8 @@ class LoginOrSignup extends StatelessWidget {
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
-                    child: Text("Sign up",
+                    child: Text(
+                      "Sign up",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -49,7 +49,6 @@ class LoginOrSignup extends StatelessWidget {
                 ),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: SizedBox(
@@ -57,7 +56,8 @@ class LoginOrSignup extends StatelessWidget {
                 child: RoundButton(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Log in",
+                    child: Text(
+                      "Log in",
                       style: TextStyle(
                         color: Theme.of(context).secondaryHeaderColor,
                         fontSize: 20,
@@ -77,7 +77,9 @@ class LoginOrSignup extends StatelessWidget {
     );
   }
 
-  void onTapSignUp(context) => Navigator.pushReplacementNamed(context, SignUp.route);
+  void onTapSignUp(context) =>
+      Navigator.pushReplacementNamed(context, SignUp.route);
 
-  void onTapLogIn(context) => Navigator.pushReplacementNamed(context,  LogIn.route);
+  void onTapLogIn(context) =>
+      Navigator.pushReplacementNamed(context, LogIn.route);
 }

@@ -1,7 +1,8 @@
-import 'package:envairo/view/widgets/custom_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:envairo/models/review.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../models/review.dart';
+import '../widgets/custom_rating_bar.dart';
 
 class Reviews extends StatelessWidget {
   final List<Review> reviews;
@@ -10,33 +11,29 @@ class Reviews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(reviews.isEmpty) {
+    if (reviews.isEmpty) {
       return const Text("This user has no reviews.");
-    }
-    else {
+    } else {
       return MediaQuery.removePadding(
         context: context,
         removeTop: true,
         child: ListView.builder(
-          itemCount: reviews.length,
-            itemBuilder: (context, index){
+            itemCount: reviews.length,
+            itemBuilder: (context, index) {
               return Column(
                 children: [
                   _reviewLine(context, reviews[index]),
-
                   const Divider(
                     thickness: 0.8,
                   ),
                 ],
               );
-            }
-        ),
+            }),
       );
-
     }
   }
 
-  Widget _reviewLine(BuildContext context, Review review){
+  Widget _reviewLine(BuildContext context, Review review) {
     return Row(
       children: [
         Padding(
@@ -51,10 +48,12 @@ class Reviews extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                        fit: BoxFit.fill, image: Image.asset(review.author.picture).image),
+                        fit: BoxFit.fill,
+                        image: Image.asset(review.author.picture).image),
                   ),
                 ),
-                Text(review.author.name,
+                Text(
+                  review.author.name,
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
@@ -67,9 +66,7 @@ class Reviews extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: CustomRatingBar(
-                      rating: review.rating)
-              ),
+                  child: CustomRatingBar(rating: review.rating)),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
                 child: Align(
