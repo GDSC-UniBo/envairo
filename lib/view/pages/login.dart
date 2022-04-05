@@ -33,27 +33,34 @@ class _LogInFormState extends State<LogIn> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 70),
+            const SizedBox(height: 150),
             Image.asset(
               "assets/images/logo.png",
-              scale: 1.5,
+              width: 200,
             ),
             const SizedBox(height: 10),
-            MyTextBox(
-              hintText: "Email",
-              keyboardType: TextInputType.emailAddress,
-              controller: emailController,
-            ),
-            MyTextBox(
-              hintText: "Password",
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              controller: passwordController,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: MyTextBox(
+                hintText: "Email",
+                keyboardType: TextInputType.emailAddress,
+                controller: emailController,
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: MyTextBox(
+                hintText: "Password",
+                obscureText: true,
+                keyboardType: TextInputType.visiblePassword,
+                controller: passwordController,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 0),
               child: SizedBox(
                 height: 40,
+                width: 300,
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
@@ -62,34 +69,38 @@ class _LogInFormState extends State<LogIn> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  buttonColor: Theme.of(context).primaryColor,
+                  buttonColor: Theme.of(context).secondaryHeaderColor,
                   onTap: () => onTapLogIn(context),
                 ),
               ),
             ),
-            Row(children: const [
-              Expanded(
-                  child: Divider(
-                thickness: 1,
-                color: Colors.black,
-                indent: 50,
-                endIndent: 20,
-                height: 40,
-              )),
-              Text("or"),
-              Expanded(
-                  child: Divider(
-                thickness: 1,
-                color: Colors.black,
-                indent: 20,
-                endIndent: 50,
-                height: 40,
-              )),
-            ]),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: const [
+                Expanded(
+                    child: Divider(
+                  thickness: 0.75,
+                  color: Colors.black,
+                  indent: 50,
+                  endIndent: 20,
+                  height: 40,
+                )),
+                Text("or"),
+                Expanded(
+                    child: Divider(
+                  thickness: 0.75,
+                  color: Colors.black,
+                  indent: 20,
+                  endIndent: 50,
+                  height: 40,
+                )),
+              ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 0, bottom: 20),
               child: SizedBox(
                 height: 40,
+                width: 300,
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
@@ -98,15 +109,16 @@ class _LogInFormState extends State<LogIn> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  buttonColor: Theme.of(context).secondaryHeaderColor,
+                  buttonColor: Theme.of(context).primaryColor,
                   onTap: onTapLogInFacebook,
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
               child: SizedBox(
                 height: 40,
+                width: 300,
                 child: RoundButton(
                   child: const Align(
                     alignment: Alignment.center,
@@ -115,12 +127,12 @@ class _LogInFormState extends State<LogIn> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  buttonColor: Theme.of(context).secondaryHeaderColor,
+                  buttonColor: Theme.of(context).primaryColor,
                   onTap: onTapLogInGoogle,
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 135),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: RichText(
