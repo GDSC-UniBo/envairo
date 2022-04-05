@@ -41,7 +41,7 @@ class ItemCard extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.only(top: 5.h, left: 30.w, right:30.w),
+                        padding: EdgeInsets.only(top: 10.h, left: 30.w, right:30.w),
                         width: double.maxFinite,
                         child: Text(
                           item.title,
