@@ -48,7 +48,7 @@ class ItemCard extends StatelessWidget {
                           style: TextStyle(
                             color: const Color.fromRGBO(61, 61, 61, 1),
                             fontFamily: "Shapiro",
-                            fontSize: 30.sp,
+                            fontSize: 36.sp,
                           ),
                           textAlign: TextAlign.left,
                           maxLines: 1,
