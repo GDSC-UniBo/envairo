@@ -1,5 +1,5 @@
 import 'package:envairo/models/advertisement.dart';
-import 'package:envairo/view/pages/advertisement_details.dart';
+import 'package:envairo/view/pages/item_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,10 +19,11 @@ class ItemCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius.h)),
         child: GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed(AdvertisementDetails.route, arguments: item),
+          onTap: () => Navigator.of(context).pushNamed(ItemDetails.route, arguments: item),
           child: Column(
             children: [
               Expanded(
+                flex: 4,
                 child: Hero(
                   tag: item.mainImage + item.seller.name,
                   child: SizedBox(
@@ -36,6 +37,7 @@ class ItemCard extends StatelessWidget {
                 ),
               ),
               Expanded(
+                flex: 3,
                   child: Column(
                     children: [
                       Container(
@@ -43,7 +45,7 @@ class ItemCard extends StatelessWidget {
                         EdgeInsets.symmetric(vertical: 5.h, horizontal: 30.w),
                         width: double.maxFinite,
                         child: Text(item.title,
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.subtitle2,
                           textAlign: TextAlign.left,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -55,13 +57,13 @@ class ItemCard extends StatelessWidget {
                         minLeadingWidth: 0,
                         leading: ClipOval(
                           child: Image.asset(item.seller.picture,
-                            height: 55.h,
-                            width: 55.h,
+                            height: 45.h,
+                            width: 45.h,
                             fit: BoxFit.cover,
                           ),
                         ),
                         title: Text(item.seller.name,
-                          style: Theme.of(context).textTheme.subtitle2,
+                          style: Theme.of(context).textTheme.caption,
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                         ),

@@ -8,34 +8,34 @@ import '../widgets/custom_rating_bar.dart';
 import '../widgets/round_button.dart';
 import 'chat_view.dart';
 
-class AdvertisementDetails extends StatelessWidget {
+class ItemDetails extends StatelessWidget {
   static const String route = '/adv-details';
 
-  final Item advertisement;
+  final Item item;
 
-  const AdvertisementDetails({Key? key, required this.advertisement}) : super(key: key);
+  const ItemDetails({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     User.generatePlaceholders().first;
     return Scaffold(
       body: Hero(
-          tag: advertisement.mainImage + advertisement.seller.name,
+          tag: item.mainImage + item.seller.name,
           child: SingleChildScrollView(
             child: Column(
               children: [
                 buildImage(),
                 CustomCard(
-                  child: Text(advertisement.description),
+                  child: Text(item.description),
                 ),
                 CustomCard(
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, UserProfile.route, arguments: advertisement.seller),
+                          onTap: () => Navigator.pushNamed(context, UserProfile.route, arguments: item.seller),
                           child: ClipOval(
                             child: Image.asset(
-                              advertisement.seller.picture,
+                              item.seller.picture,
                               height: 100.h,
                               width: 100.h,
                               fit: BoxFit.cover,
@@ -49,7 +49,7 @@ class AdvertisementDetails extends StatelessWidget {
                             children: [
                               Align(
                                 alignment: Alignment.topLeft,
-                                child: Text(advertisement.seller.name),
+                                child: Text(item.seller.name),
                               ),
                               Row(
                                 children: [
@@ -58,7 +58,7 @@ class AdvertisementDetails extends StatelessWidget {
                                   ),
                                   Expanded(
                                       flex: 3,
-                                      child: Text(advertisement.seller.reviewCount.toString() + " reviews")
+                                      child: Text(item.seller.reviewCount.toString() + " reviews")
                                   )
                                 ],
                               )
@@ -75,7 +75,7 @@ class AdvertisementDetails extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 10),
                                 child: Icon(Icons.check_circle_outline)),
-                            Text(advertisement.seller.email)
+                            Text(item.seller.email)
                           ],
                         ),
                         Row(
@@ -137,6 +137,6 @@ class AdvertisementDetails extends StatelessWidget {
 
   Widget buildImage() => AspectRatio(
     aspectRatio: 1,
-    child: Image.network(advertisement.mainImage, fit: BoxFit.cover),
+    child: Image.network(item.mainImage, fit: BoxFit.cover),
   );
 }

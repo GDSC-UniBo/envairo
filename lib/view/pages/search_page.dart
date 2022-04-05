@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../models/advertisement.dart';
 import '../../models/user.dart';
-import 'advertisement_details.dart';
+import 'item_details.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test9"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[8]
         ),
       ),
@@ -41,7 +41,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test8"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[7]
         ),
       ),
@@ -50,7 +50,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test7"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item(
                 id: 6,
                 seller: User.generatePlaceholders()[1],
@@ -65,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test6"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[5]
         ),
       ),
@@ -74,7 +74,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test5"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[4]
         ),
       ),
@@ -83,7 +83,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test4"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[3]
         ),
       ),
@@ -92,7 +92,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test3"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[2]
         ),
       ),
@@ -101,7 +101,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test2"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[0]
         ),
       ),
@@ -110,7 +110,7 @@ class _SearchPageState extends State<SearchPage> {
         markerId: MarkerId("test"),
         icon: BitmapDescriptor.defaultMarkerWithHue(156),
         onTap: () => Navigator.of(context).pushNamed(
-            AdvertisementDetails.route,
+            ItemDetails.route,
             arguments: Item.generatePlaceholders()[1]
         ),
       ),
