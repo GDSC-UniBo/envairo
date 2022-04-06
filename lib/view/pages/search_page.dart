@@ -51,7 +51,8 @@ class _SearchPageState extends State<SearchPage> {
               id: 6,
               seller: User.generatePlaceholders()[1],
               title: "Tennis chair",
-              description: "I know you need this ;)",
+              description:
+                  "If I see this chair in my house again I will smash it. Back to back like Rafael Nadal",
               mainImage:
                   "https://i.pinimg.com/originals/17/29/46/172946e524382c6785442a2472ecbd30.jpg"),
         ),
